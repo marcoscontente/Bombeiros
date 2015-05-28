@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>User</key>
+	<string></string>
+	<key>Password</key>
+	<string></string>
+	<key>Url_Desenvolvimento</key>
+	<string>http://10.200.240.46/sgsci_mobile/ConsultaAvcb.svc/Licenca/PorQrCode/</string>
+	<key>Url_Producao</key>
+	<string></string>
+</dict>
+</plist>
