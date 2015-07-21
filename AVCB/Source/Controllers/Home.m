@@ -80,7 +80,8 @@
     NSString *pathAppSettings = [[NSBundle mainBundle] pathForResource:@"AVCB-Configuracoes" ofType:@"plist"];
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:pathAppSettings];
     NSString *ApiUrlBase = (NSString*)[dict objectForKey:@"Url_Desenvolvimento"];
-    NSString *ApiUrl = [[NSString alloc] initWithFormat:@"%@%@",ApiUrlBase,chave];
+//    NSString *ApiUrl = [[NSString alloc] initWithFormat:@"%@%@",ApiUrlBase,chave];
+    NSString *ApiUrl = [[NSString alloc] initWithFormat:@"%@29B4CAC75FEDB50C683E6803B4580716",ApiUrlBase];
     NSURL *url=[NSURL URLWithString:ApiUrl];
     
     NSLog(@"%@", url);
@@ -162,26 +163,30 @@
     }
     else
     {
-        jsonLocation = [[CLLocation alloc] initWithLatitude:jsonLatitude longitude:jsonLongitude];
+        NSDictionary *codigoJson = [self formatterToDictionary: responseData];
+        [[Util shared] setRespostaChamada:codigoJson];
+        [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
         
-        double distance = [atualLocation distanceFromLocation:jsonLocation];
-        
-        if(distance < 15)
-        {
-            NSDictionary *codigoJson = [self formatterToDictionary: responseData];
-            [[Util shared] setRespostaChamada:codigoJson];
-            [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
-        }
-        else
-        {
-            UIAlertView *alerta = [[UIAlertView alloc]
-                                   initWithTitle:nil
-                                   message:@"O AVCB se encontra-se fora do raio!"
-                                   delegate:nil
-                                   cancelButtonTitle:@"Ok"
-                                   otherButtonTitles:nil];
-            [alerta show];
-        }
+//        jsonLocation = [[CLLocation alloc] initWithLatitude:jsonLatitude longitude:jsonLongitude];
+//        
+//        double distance = [atualLocation distanceFromLocation:jsonLocation];
+//        
+//        if(distance < 15)
+//        {
+//            NSDictionary *codigoJson = [self formatterToDictionary: responseData];
+//            [[Util shared] setRespostaChamada:codigoJson];
+//            [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
+//        }
+//        else
+//        {
+//            UIAlertView *alerta = [[UIAlertView alloc]
+//                                   initWithTitle:nil
+//                                   message:@"O AVCB se encontra-se fora do raio!"
+//                                   delegate:nil
+//                                   cancelButtonTitle:@"Ok"
+//                                   otherButtonTitles:nil];
+//            [alerta show];
+//        }
     }
     [delegate hideActivityViewer];
 }
