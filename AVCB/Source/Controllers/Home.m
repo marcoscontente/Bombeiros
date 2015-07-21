@@ -83,6 +83,8 @@
     NSString *ApiUrl = [[NSString alloc] initWithFormat:@"%@%@",ApiUrlBase,chave];
     NSURL *url=[NSURL URLWithString:ApiUrl];
     
+    NSLog(@"%@", url);
+    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:url];
     [request setHTTPMethod:@"GET"];
@@ -214,6 +216,7 @@
         break;
     
     NSString* txtCodigo = symbol.data;
+    
     NSDictionary *codigoJson = [self formatterToDictionary: txtCodigo];
     
     if (codigoJson == NULL)
@@ -223,7 +226,8 @@
     else
     {
         NSDictionary *qrcode = [codigoJson objectForKey:@"qrcode"];
-        NSString *chave = [qrcode objectForKey:@"ID"];
+        NSDictionary *certidao = [qrcode objectForKey:@"Certidao"];
+        NSString *chave = [certidao objectForKey:@"ID"];
         NSLog(@"%@", chave);
         jsonLatitude = [[qrcode objectForKey:@"Latitude"] doubleValue];
         jsonLongitude = [[qrcode objectForKey:@"Longitude"] doubleValue];
