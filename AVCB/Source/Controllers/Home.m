@@ -163,30 +163,30 @@
     }
     else
     {
-        NSDictionary *codigoJson = [self formatterToDictionary: responseData];
-        [[Util shared] setRespostaChamada:codigoJson];
-        [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
+//        NSDictionary *codigoJson = [self formatterToDictionary: responseData];
+//        [[Util shared] setRespostaChamada:codigoJson];
+//        [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
         
-//        jsonLocation = [[CLLocation alloc] initWithLatitude:jsonLatitude longitude:jsonLongitude];
-//        
-//        double distance = [atualLocation distanceFromLocation:jsonLocation];
-//        
-//        if(distance < 15)
-//        {
-//            NSDictionary *codigoJson = [self formatterToDictionary: responseData];
-//            [[Util shared] setRespostaChamada:codigoJson];
-//            [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
-//        }
-//        else
-//        {
-//            UIAlertView *alerta = [[UIAlertView alloc]
-//                                   initWithTitle:nil
-//                                   message:@"O AVCB se encontra-se fora do raio!"
-//                                   delegate:nil
-//                                   cancelButtonTitle:@"Ok"
-//                                   otherButtonTitles:nil];
-//            [alerta show];
-//        }
+        jsonLocation = [[CLLocation alloc] initWithLatitude:jsonLatitude longitude:jsonLongitude];
+        
+        double distance = [atualLocation distanceFromLocation:jsonLocation];
+        
+        if(distance < 15)
+        {
+            NSDictionary *codigoJson = [self formatterToDictionary: responseData];
+            [[Util shared] setRespostaChamada:codigoJson];
+            [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
+        }
+        else
+        {
+            UIAlertView *alerta = [[UIAlertView alloc]
+                                   initWithTitle:nil
+                                   message:@"O AVCB se encontra-se fora do raio!"
+                                   delegate:nil
+                                   cancelButtonTitle:@"Ok"
+                                   otherButtonTitles:nil];
+            [alerta show];
+        }
     }
     [delegate hideActivityViewer];
 }
