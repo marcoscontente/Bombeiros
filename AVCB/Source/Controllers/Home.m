@@ -224,6 +224,8 @@
     
     NSDictionary *codigoJson = [self formatterToDictionary: txtCodigo];
     
+    NSLog(@"%@", codigoJson);
+    
     if (codigoJson == NULL)
     {
         [[[UIAlertView alloc] initWithTitle:@"Atenção"  message:@"QRCode Inválido!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
@@ -231,8 +233,7 @@
     else
     {
         NSDictionary *qrcode = [codigoJson objectForKey:@"qrcode"];
-        NSDictionary *certidao = [qrcode objectForKey:@"Certidao"];
-        NSString *chave = [certidao objectForKey:@"ID"];
+        NSString *chave = [qrcode objectForKey:@"ID"];
         NSLog(@"%@", chave);
         jsonLatitude = [[qrcode objectForKey:@"Latitude"] doubleValue];
         jsonLongitude = [[qrcode objectForKey:@"Longitude"] doubleValue];
