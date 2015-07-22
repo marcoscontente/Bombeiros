@@ -80,8 +80,8 @@
     NSString *pathAppSettings = [[NSBundle mainBundle] pathForResource:@"AVCB-Configuracoes" ofType:@"plist"];
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:pathAppSettings];
     NSString *ApiUrlBase = (NSString*)[dict objectForKey:@"Url_Desenvolvimento"];
-//    NSString *ApiUrl = [[NSString alloc] initWithFormat:@"%@%@",ApiUrlBase,chave];
-    NSString *ApiUrl = [[NSString alloc] initWithFormat:@"%@29B4CAC75FEDB50C683E6803B4580716",ApiUrlBase];
+    NSString *ApiUrl = [[NSString alloc] initWithFormat:@"%@%@",ApiUrlBase,chave];
+    //NSString *ApiUrl = [[NSString alloc] initWithFormat:@"%@29B4CAC75FEDB50C683E6803B4580716",ApiUrlBase];
     NSURL *url=[NSURL URLWithString:ApiUrl];
     
     NSLog(@"%@", url);
