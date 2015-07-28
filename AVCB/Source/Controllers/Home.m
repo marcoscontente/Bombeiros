@@ -171,22 +171,11 @@
         
         double distance = [atualLocation distanceFromLocation:jsonLocation];
         
-        if(distance < 15)
-        {
-            NSDictionary *codigoJson = [self formatterToDictionary: responseData];
-            [[Util shared] setRespostaChamada:codigoJson];
-            [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
-        }
-        else
-        {
-            UIAlertView *alerta = [[UIAlertView alloc]
-                                   initWithTitle:nil
-                                   message:@"O AVCB se encontra-se fora do raio!"
-                                   delegate:nil
-                                   cancelButtonTitle:@"Ok"
-                                   otherButtonTitles:nil];
-            [alerta show];
-        }
+        NSDictionary *codigoJson = [self formatterToDictionary: responseData];
+        [[Util shared] setDistance:distance];
+        [[Util shared] setRespostaChamada:codigoJson];
+        [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
+           
     }
     [delegate hideActivityViewer];
 }

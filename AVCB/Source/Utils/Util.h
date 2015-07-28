@@ -19,6 +19,7 @@
 +(void) resetLoginTimeout;
 
 + (Util*) shared;
+@property (nonatomic) double distance;
 @property (strong) AutoRes *resAuto;
 @property (strong) NSDictionary *respostaChamada;
 

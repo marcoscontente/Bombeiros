@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GgH-yd-AOZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GgH-yd-AOZ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -305,7 +305,7 @@ Você poderá informar ao Corpo de Bombeiros uma não conformidade para serem to
             </objects>
             <point key="canvasLocation" x="1662" y="-337"/>
         </scene>
-        <!--Pesquisa-->
+        <!--Pesquisa de licenças-->
         <scene sceneID="bo0-qK-TAl">
             <objects>
                 <tableViewController id="d8j-tF-R2o" customClass="ResultadoPesquisa" sceneMemberID="viewController">
@@ -334,13 +334,27 @@ Você poderá informar ao Corpo de Bombeiros uma não conformidade para serem to
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RaioCell" textLabel="MiZ-e0-fHS" style="IBUITableViewCellStyleDefault" id="1s2-tV-kUH">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1s2-tV-kUH" id="Gq3-pc-onE">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MiZ-e0-fHS">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="d8j-tF-R2o" id="WKy-FQ-jcJ"/>
                             <outlet property="delegate" destination="d8j-tF-R2o" id="ACS-QY-435"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Pesquisa" id="3mr-fL-QX8">
+                    <navigationItem key="navigationItem" title="Pesquisa de licenças" id="3mr-fL-QX8">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="k59-JJ-pLH"/>
                     </navigationItem>
                 </tableViewController>
