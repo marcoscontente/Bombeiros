@@ -35,7 +35,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (distance > 15)
+    if (distance > 100)
     {
         return 7;
     }
@@ -52,7 +52,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     UITableViewCell *raioCell = [tableView dequeueReusableCellWithIdentifier:@"RaioCell"];
     
-    if (distance > 15)
+    if (distance > 100)
     {
         switch (indexPath.row)
         {
@@ -89,11 +89,12 @@
         }
         if (indexPath.row != 6)
         {
-            return raioCell;
+            return cell;
         }
         else
         {
-            return cell;
+            return raioCell
+            ;
         }
     }
     else

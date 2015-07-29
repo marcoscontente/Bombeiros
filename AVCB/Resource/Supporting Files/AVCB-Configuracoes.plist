@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>User</key>
-	<string></string>
+	<string>ViaFacil</string>
 	<key>Password</key>
-	<string></string>
+	<string>V1@F@c1lW38$3rv1c3</string>
 	<key>Url_Desenvolvimento</key>
 	<string>http://10.200.240.46/sgsci_mobile/ConsultaAvcb.svc/Licenca/PorQrCode/</string>
 	<key>Url_Producao</key>

@@ -58,8 +58,7 @@
 {
     if (firstTimeUpdateLocation)
     {
-//        atualLocation = [[CLLocation alloc] initWithLatitude:locationManager.location.coordinate.latitude longitude:locationManager.location.coordinate.longitude];
-        atualLocation = [[CLLocation alloc] initWithLatitude:-23.000000 longitude:-46.000000];
+        atualLocation = [[CLLocation alloc] initWithLatitude:locationManager.location.coordinate.latitude longitude:locationManager.location.coordinate.longitude];
         
         firstTimeUpdateLocation = NO;
     }
@@ -79,16 +78,19 @@
     [NSThread detachNewThreadSelector:@selector(showActivityViewer) toTarget:[[UIApplication sharedApplication] delegate] withObject:nil];
     NSString *pathAppSettings = [[NSBundle mainBundle] pathForResource:@"AVCB-Configuracoes" ofType:@"plist"];
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:pathAppSettings];
+    NSString *user = (NSString*)[dict objectForKey:@"User"];
+    NSString *password = (NSString*)[dict objectForKey:@"Password"];
     NSString *ApiUrlBase = (NSString*)[dict objectForKey:@"Url_Desenvolvimento"];
     NSString *ApiUrl = [[NSString alloc] initWithFormat:@"%@%@",ApiUrlBase,chave];
-    //NSString *ApiUrl = [[NSString alloc] initWithFormat:@"%@29B4CAC75FEDB50C683E6803B4580716",ApiUrlBase];
     NSURL *url=[NSURL URLWithString:ApiUrl];
     
-    NSLog(@"%@", url);
-    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    NSString *authStr = [NSString stringWithFormat:@"%@:%@", user, password];
+    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodedStringWithOptions:0]];
     [request setURL:url];
     [request setHTTPMethod:@"GET"];
+    [request setValue:authValue forHTTPHeaderField:@"Authorization"];
     
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
@@ -163,12 +165,7 @@
     }
     else
     {
-//        NSDictionary *codigoJson = [self formatterToDictionary: responseData];
-//        [[Util shared] setRespostaChamada:codigoJson];
-//        [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
-        
         jsonLocation = [[CLLocation alloc] initWithLatitude:jsonLatitude longitude:jsonLongitude];
-        
         double distance = [atualLocation distanceFromLocation:jsonLocation];
         
         NSDictionary *codigoJson = [self formatterToDictionary: responseData];
@@ -210,10 +207,7 @@
         break;
     
     NSString* txtCodigo = symbol.data;
-    
     NSDictionary *codigoJson = [self formatterToDictionary: txtCodigo];
-    
-    NSLog(@"%@", codigoJson);
     
     if (codigoJson == NULL)
     {
@@ -223,7 +217,6 @@
     {
         NSDictionary *qrcode = [codigoJson objectForKey:@"qrcode"];
         NSString *chave = [qrcode objectForKey:@"ID"];
-        NSLog(@"%@", chave);
         jsonLatitude = [[qrcode objectForKey:@"Latitude"] doubleValue];
         jsonLongitude = [[qrcode objectForKey:@"Longitude"] doubleValue];
         [self chamadaServico:chave];
@@ -236,7 +229,5 @@
 {
     [self presentViewController:_reader animated:YES completion:nil];
 }
-
-//
 
 @end
