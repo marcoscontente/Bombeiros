@@ -41,7 +41,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mD-gT-PFO">
                                                     <rect key="frame" x="158" y="5" width="285.5" height="50"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone60x60.png" translatesAutoresizingMaskIntoConstraints="NO" id="5tz-ad-wbA">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconHome.png" translatesAutoresizingMaskIntoConstraints="NO" id="5tz-ad-wbA">
                                                             <rect key="frame" x="8" y="-5" width="60" height="60"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AVCB - PMESP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5G-Ha-XRf">
@@ -540,6 +540,7 @@ Entretanto informamos que deste modo não será verificada se o Auto corresponde
         </scene>
     </scenes>
     <resources>
+        <image name="iconHome.png" width="60" height="60"/>
         <image name="icone60x60.png" width="60" height="60"/>
         <image name="turorial22x22.png" width="44" height="44"/>
     </resources>

@@ -167,7 +167,7 @@
     {
         jsonLocation = [[CLLocation alloc] initWithLatitude:jsonLatitude longitude:jsonLongitude];
         double distance = [atualLocation distanceFromLocation:jsonLocation];
-        
+
         NSDictionary *codigoJson = [self formatterToDictionary: responseData];
         [[Util shared] setDistance:distance];
         [[Util shared] setRespostaChamada:codigoJson];
