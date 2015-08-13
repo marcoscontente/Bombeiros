@@ -190,12 +190,10 @@
 
 -(void)readerViewDidStart:(ZBarReaderView *)readerView
 {
-    
 }
 
 -(void)readerView:(ZBarReaderView *)readerView didReadSymbols:(ZBarSymbolSet *)symbols fromImage:(UIImage *)image
 {
-    //    NSLog(@"%@", symbols);
 }
 
 -(void) imagePickerController: (UIImagePickerController*) reader didFinishPickingMediaWithInfo: (NSDictionary*) info
@@ -206,22 +204,40 @@
     for(symbol in results)
         break;
     
-    NSString* txtCodigo = symbol.data;
-    NSDictionary *codigoJson = [self formatterToDictionary: txtCodigo];
     
-    if (codigoJson == NULL)
+    NSString* txtCodigo = symbol.data;
+    NSDictionary *codigoJson;
+    
+    //verificar se o modelo de qrcode é antigo
+    
+    BOOL modeloAntigo = [txtCodigo rangeOfString:@"AVCB"].location != NSNotFound;
+    
+    if (modeloAntigo)
     {
-        [[[UIAlertView alloc] initWithTitle:@"Atenção"  message:@"QRCode Inválido!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+        // chamamos a url do bombeiro
+        [self performSegueWithIdentifier:@"segueWebView" sender:txtCodigo];
     }
     else
     {
-        NSDictionary *qrcode = [codigoJson objectForKey:@"qrcode"];
-        NSString *chave = [qrcode objectForKey:@"ID"];
-        jsonLatitude = [[qrcode objectForKey:@"Latitude"] doubleValue];
-        jsonLongitude = [[qrcode objectForKey:@"Longitude"] doubleValue];
-        [self chamadaServico:chave];
+        codigoJson = [self formatterToDictionary: txtCodigo];
+        if (codigoJson == NULL)
+        {
+            [[[UIAlertView alloc] initWithTitle:@"Atenção"  message:@"QRCode Inválido!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+        }
+        else
+        {
+            NSDictionary *qrcode = [codigoJson objectForKey:@"qrcode"];
+            NSString *chave = [qrcode objectForKey:@"ID"];
+            jsonLatitude = [[qrcode objectForKey:@"Latitude"] doubleValue];
+            jsonLongitude = [[qrcode objectForKey:@"Longitude"] doubleValue];
+            [self chamadaServico:[NSString stringWithFormat:@"{\n""chave"": ""%@""\n}", chave]];
+        }
     }
+    
     [_reader dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 }
 
 #pragma mark - IBActions

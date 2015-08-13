@@ -49,6 +49,7 @@
 		B5C3FA141A279DE60062F014 /* AutoRes.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C3FA131A279DE60062F014 /* AutoRes.m */; };
 		B5C3FA1E1A27A12C0062F014 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C3FA1D1A27A12C0062F014 /* Util.m */; };
 		B5C3FA201A27A3D40062F014 /* AVCB-Configuracoes.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5C3FA1F1A27A3D40062F014 /* AVCB-Configuracoes.plist */; };
+		FFDD80281B7D0C4100681462 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD80271B7D0C4100681462 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,8 @@
 		B5C3FA1F1A27A3D40062F014 /* AVCB-Configuracoes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "AVCB-Configuracoes.plist"; path = "Resource/Supporting Files/AVCB-Configuracoes.plist"; sourceTree = "<group>"; };
 		CB72BBBDD1D00ECFF5CAB33D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CD1A60E2D6556E31215744 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FFDD80261B7D0C4100681462 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = Source/Controllers/WebViewController.h; sourceTree = "<group>"; };
+		FFDD80271B7D0C4100681462 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = Source/Controllers/WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +297,8 @@
 				B53178BF1A48985C00B370B1 /* Home.m */,
 				B5A0E68C1B138E5D0016A7E6 /* ResultadoPesquisa.h */,
 				B5A0E68D1B138E5D0016A7E6 /* ResultadoPesquisa.m */,
+				FFDD80261B7D0C4100681462 /* WebViewController.h */,
+				FFDD80271B7D0C4100681462 /* WebViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -507,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B53178C01A48985C00B370B1 /* Home.m in Sources */,
+				FFDD80281B7D0C4100681462 /* WebViewController.m in Sources */,
 				B55F636A1A266163003EA3D1 /* main.m in Sources */,
 				B5A0E68E1B138E5D0016A7E6 /* ResultadoPesquisa.m in Sources */,
 				B55F63621A266138003EA3D1 /* AppDelegate.m in Sources */,
