@@ -82,8 +82,9 @@
 
 -(void) hideActivityViewer
 {
-    [[[self.activityView subviews] objectAtIndex:0] stopAnimating];
-    
+    if ([self.activityView subviews].count > 0) {
+        [[[self.activityView subviews] objectAtIndex:0] stopAnimating];
+    }
     [self.activityView removeFromSuperview];
     self.activityView = nil;
 }

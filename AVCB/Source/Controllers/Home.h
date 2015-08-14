@@ -11,6 +11,7 @@
 #import <ZBarReaderViewController.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import "WebViewController.h"
 
 @interface Home : UITableViewController <ZBarReaderViewDelegate, ZBarReaderDelegate, UIAlertViewDelegate, CLLocationManagerDelegate>
 

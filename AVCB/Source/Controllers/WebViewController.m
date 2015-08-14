@@ -12,7 +12,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARAVCB.ASPX"]]];
+    webView.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webViewParam {
+    [act stopAnimating];
+    [UIView animateWithDuration:.5 animations:^{
+        webView.alpha = 1.0;
+    }];
 }
 
 @end

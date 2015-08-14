@@ -210,12 +210,16 @@
     
     //verificar se o modelo de qrcode é antigo
     
-    BOOL modeloAntigo = [txtCodigo rangeOfString:@"AVCB"].location != NSNotFound;
+    BOOL modeloAVCB = [txtCodigo rangeOfString:@"AVCB:"].location != NSNotFound;
+    BOOL modeloCLCB = [txtCodigo rangeOfString:@"CLCB:"].location != NSNotFound;
     
-    if (modeloAntigo)
+    if (modeloAVCB)
     {
         // chamamos a url do bombeiro
-        [self performSegueWithIdentifier:@"segueWebView" sender:txtCodigo];
+        [self performSegueWithIdentifier:@"segueWebView" sender:@"http://www2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARAVCB.ASPX"];
+    }
+    else if (modeloCLCB) {
+        [self performSegueWithIdentifier:@"segueWebView" sender:@"http://www2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARCLCB.ASPX"];
     }
     else
     {
@@ -238,6 +242,10 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"segueWebView"]) {
+        WebViewController *webViewController = [segue destinationViewController];
+        webViewController.url = (NSString *)sender;
+    }
 }
 
 #pragma mark - IBActions
