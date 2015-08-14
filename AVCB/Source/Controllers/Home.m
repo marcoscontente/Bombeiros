@@ -72,26 +72,48 @@
     return jsonFormatter;
 }
 
--(void)chamadaServico:(NSString*)chave
+-(void)chamadaServico:(NSDictionary *)chave
 {
     delegate = [[UIApplication sharedApplication] delegate];
+    // exibe o activity indicator
     [NSThread detachNewThreadSelector:@selector(showActivityViewer) toTarget:[[UIApplication sharedApplication] delegate] withObject:nil];
+    
+    // acessando os nossos resources
     NSString *pathAppSettings = [[NSBundle mainBundle] pathForResource:@"AVCB-Configuracoes" ofType:@"plist"];
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:pathAppSettings];
+    
+    // obtendo usuario e senha
     NSString *user = (NSString*)[dict objectForKey:@"User"];
     NSString *password = (NSString*)[dict objectForKey:@"Password"];
-    NSString *ApiUrlBase = (NSString*)[dict objectForKey:@"Url_Desenvolvimento"];
-    NSString *ApiUrl = [[NSString alloc] initWithFormat:@"%@%@",ApiUrlBase,chave];
-    NSURL *url=[NSURL URLWithString:ApiUrl];
     
+    // obtendo nossa url base
+    NSString *ApiUrlBase = (NSString*)[dict objectForKey:@"Url_Desenvolvimento"];
+
+    // iniciando a requisicao
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    // obtendo usuario e senha da resquisicao
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", user, password];
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
+    // encodando esse usuario e senha
     NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authData base64EncodedStringWithOptions:0]];
-    [request setURL:url];
-    [request setHTTPMethod:@"GET"];
+    // setando a url
+    [request setURL:[NSURL URLWithString:ApiUrlBase]];
+    // setando o metodo
+    [request setHTTPMethod:@"POST"];
+    // setando os headers
     [request setValue:authValue forHTTPHeaderField:@"Authorization"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
+    // setando o body
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:chave options:0 error:nil];
+    NSString* jsonString = [[NSString alloc] initWithBytes:[jsonData bytes] length:[jsonData length] encoding:NSUTF8StringEncoding];
+    
+    NSString *conteudoBody = jsonString;
+
+    
+    [request setHTTPBody:[conteudoBody dataUsingEncoding:NSUTF8StringEncoding]];
+
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
     if (connection){
@@ -234,7 +256,7 @@
             NSString *chave = [qrcode objectForKey:@"ID"];
             jsonLatitude = [[qrcode objectForKey:@"Latitude"] doubleValue];
             jsonLongitude = [[qrcode objectForKey:@"Longitude"] doubleValue];
-            [self chamadaServico:[NSString stringWithFormat:@"{\n""chave"": ""%@""\n}", chave]];
+            [self chamadaServico:@{@"chave":chave}];
         }
     }
     

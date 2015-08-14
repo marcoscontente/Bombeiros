@@ -84,9 +84,9 @@
 {
     if ([self.activityView subviews].count > 0) {
         [[[self.activityView subviews] objectAtIndex:0] stopAnimating];
-        [self.activityView removeFromSuperview];
-        self.activityView = nil;
     }
+    [self.activityView removeFromSuperview];
+    self.activityView = nil;
 }
 
 @end
