@@ -240,11 +240,15 @@
         // chamamos a url do bombeiro
         [self performSegueWithIdentifier:@"segueWebView" sender:@"http://www2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARAVCB.ASPX"];
     }
+    //verificar se o modelo de qrcode é antigo  t este
     else if (modeloCLCB) {
+        //verificar se o modelo de qrcode é antigo  t este
         [self performSegueWithIdentifier:@"segueWebView" sender:@"http://www2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARCLCB.ASPX"];
+        //verificar se o modelo de qrcode é antigo  t este
     }
     else
     {
+        //verificar se o modelo de qrcode é antigo  t este
         codigoJson = [self formatterToDictionary: txtCodigo];
         if (codigoJson == NULL)
         {
