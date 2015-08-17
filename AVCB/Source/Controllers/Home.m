@@ -230,7 +230,7 @@
     NSString* txtCodigo = symbol.data;
     NSDictionary *codigoJson;
     
-    //verificar se o modelo de qrcode é antigo
+    //verificar se o modelo de qrcode é antigo  t este
     
     BOOL modeloAVCB = [txtCodigo rangeOfString:@"AVCB:"].location != NSNotFound;
     BOOL modeloCLCB = [txtCodigo rangeOfString:@"CLCB:"].location != NSNotFound;
