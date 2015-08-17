@@ -9,6 +9,7 @@
 #import "Home.h"
 #import "AppDelegate.h"
 #import "Util.h"
+#import "Reachability.h"
 
 @interface Home ()
 
@@ -28,6 +29,7 @@
     CLGeocoder *fgeo;
     NSMutableData *urlData;
     AppDelegate *delegate;
+    Reachability* internetReachable;
 }
 
 - (void)viewDidLoad
@@ -121,8 +123,8 @@
     }
     else{
         UIAlertView *alerta = [[UIAlertView alloc]
-                               initWithTitle:@"Não foi possivel estabelecer conexão com o servidor"
-                               message:@"Tente novamente"
+                               initWithTitle:@"Erro de conexão"
+                               message:@"Ocorreu um erro ao processar a requisição, tente novamente."
                                delegate:nil
                                cancelButtonTitle:@"Ok"
                                otherButtonTitles:nil];
@@ -152,8 +154,8 @@
     if (error.code == -1009)
     {
         UIAlertView *alerta = [[UIAlertView alloc]
-                               initWithTitle:@"Erro"
-                               message:@"Você está sem conexão com a internet."
+                               initWithTitle:@"Erro de conexão"
+                               message:@"Não foi possível conectar-se ao servidor. Verifique sua conexão à internet e tente novamente."
                                delegate:nil
                                cancelButtonTitle:@"Ok"
                                otherButtonTitles:nil];
@@ -161,13 +163,27 @@
     }
     else
     {
-        UIAlertView *alerta = [[UIAlertView alloc]
-                               initWithTitle:@"Erro"
-                               message:error.localizedDescription
-                               delegate:nil
-                               cancelButtonTitle:@"Ok"
-                               otherButtonTitles:nil];
-        [alerta show];
+        NetworkStatus internetStatus = [internetReachable currentReachabilityStatus];
+        if (internetStatus == NotReachable)
+        {
+            UIAlertView *alerta = [[UIAlertView alloc]
+                                   initWithTitle:@"Erro de conexão"
+                                   message:@"Não foi possível conectar-se ao servidor. Verifique sua conexão à internet e tente novamente."
+                                   delegate:nil
+                                   cancelButtonTitle:@"Ok"
+                                   otherButtonTitles:nil];
+            [alerta show];
+        }
+        else
+        {
+            UIAlertView *alerta = [[UIAlertView alloc]
+                                   initWithTitle:@"Erro de conexão"
+                                   message:@"Ocorreu um erro ao processar a requisição, tente novamente."
+                                   delegate:nil
+                                   cancelButtonTitle:@"Ok"
+                                   otherButtonTitles:nil];
+            [alerta show];
+        }
     }
 }
 
@@ -175,10 +191,20 @@
 {
     NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
     
-    if (stCodAuto != 200)
+    if (stCodAuto == 200)
+    {
+        jsonLocation = [[CLLocation alloc] initWithLatitude:jsonLatitude longitude:jsonLongitude];
+        double distance = [atualLocation distanceFromLocation:jsonLocation];
+        
+        NSDictionary *codigoJson = [self formatterToDictionary: responseData];
+        [[Util shared] setDistance:distance];
+        [[Util shared] setRespostaChamada:codigoJson];
+        [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
+    }
+    else if (stCodAuto == 400)
     {
         UIAlertView *alerta = [[UIAlertView alloc]
-                               initWithTitle:@"Erro"
+                               initWithTitle:@"Aviso"
                                message:responseData
                                delegate:nil
                                cancelButtonTitle:@"Ok"
@@ -187,14 +213,13 @@
     }
     else
     {
-        jsonLocation = [[CLLocation alloc] initWithLatitude:jsonLatitude longitude:jsonLongitude];
-        double distance = [atualLocation distanceFromLocation:jsonLocation];
-
-        NSDictionary *codigoJson = [self formatterToDictionary: responseData];
-        [[Util shared] setDistance:distance];
-        [[Util shared] setRespostaChamada:codigoJson];
-        [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
-           
+        UIAlertView *alerta = [[UIAlertView alloc]
+                               initWithTitle:@"Erro de conexão"
+                               message:@"Ocorreu um erro ao processar a requisição, tente novamente."
+                               delegate:nil
+                               cancelButtonTitle:@"Ok"
+                               otherButtonTitles:nil];
+        [alerta show];
     }
     [delegate hideActivityViewer];
 }
@@ -230,8 +255,6 @@
     NSString* txtCodigo = symbol.data;
     NSDictionary *codigoJson;
     
-    //verificar se o modelo de qrcode é antigo  t este
-    
     BOOL modeloAVCB = [txtCodigo rangeOfString:@"AVCB:"].location != NSNotFound;
     BOOL modeloCLCB = [txtCodigo rangeOfString:@"CLCB:"].location != NSNotFound;
     
@@ -240,15 +263,11 @@
         // chamamos a url do bombeiro
         [self performSegueWithIdentifier:@"segueWebView" sender:@"http://www2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARAVCB.ASPX"];
     }
-    //verificar se o modelo de qrcode é antigo  t este
     else if (modeloCLCB) {
-        //verificar se o modelo de qrcode é antigo  t este
         [self performSegueWithIdentifier:@"segueWebView" sender:@"http://www2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARCLCB.ASPX"];
-        //verificar se o modelo de qrcode é antigo  t este
     }
     else
     {
-        //verificar se o modelo de qrcode é antigo  t este
         codigoJson = [self formatterToDictionary: txtCodigo];
         if (codigoJson == NULL)
         {
