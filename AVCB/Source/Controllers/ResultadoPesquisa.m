@@ -17,6 +17,7 @@
 {
     NSDictionary *autoData;
     double distance;
+    BOOL localizacaoHabilitado;
 }
 
 - (void)viewDidLoad
@@ -24,6 +25,7 @@
     [super viewDidLoad];
     autoData = [[Util shared] respostaChamada];
     distance = [[Util shared] distance];
+    localizacaoHabilitado = [[Util shared] localizacaoHabilitado];
 }
 
 #pragma mark - UITableView Delegate
@@ -35,7 +37,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (distance > 100)
+    if (distance > 100 && localizacaoHabilitado)
     {
         return 7;
     }
@@ -52,7 +54,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     UITableViewCell *raioCell = [tableView dequeueReusableCellWithIdentifier:@"RaioCell"];
     
-    if (distance > 100)
+    if (distance > 100 && localizacaoHabilitado)
     {
         switch (indexPath.row)
         {

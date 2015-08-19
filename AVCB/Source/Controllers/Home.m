@@ -28,6 +28,7 @@
     CLLocationManager *locationManager;
     CLGeocoder *fgeo;
     NSMutableData *urlData;
+    NSString *responseData;
     AppDelegate *delegate;
     Reachability* internetReachable;
 }
@@ -189,17 +190,33 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
+    responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
     
     if (stCodAuto == 200)
     {
-        jsonLocation = [[CLLocation alloc] initWithLatitude:jsonLatitude longitude:jsonLongitude];
-        double distance = [atualLocation distanceFromLocation:jsonLocation];
-        
-        NSDictionary *codigoJson = [self formatterToDictionary: responseData];
-        [[Util shared] setDistance:distance];
-        [[Util shared] setRespostaChamada:codigoJson];
-        [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
+        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse)
+        {
+            jsonLocation = [[CLLocation alloc] initWithLatitude:jsonLatitude longitude:jsonLongitude];
+            atualLocation = [[CLLocation alloc] initWithLatitude:locationManager.location.coordinate.latitude longitude:locationManager.location.coordinate.longitude];
+            
+            double distance = [atualLocation distanceFromLocation:jsonLocation];
+            
+            NSDictionary *codigoJson = [self formatterToDictionary: responseData];
+            [[Util shared] setDistance:distance];
+            [[Util shared] setRespostaChamada:codigoJson];
+            [[Util shared] setLocalizacaoHabilitado:YES];
+            [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
+        }
+        else
+        {
+            UIAlertView *alerta = [[UIAlertView alloc]
+                                   initWithTitle:@"Aviso"
+                                   message:@"O serviço de localização está desabilitado para este aplicativo. Você deseja habilitá-lo?"
+                                   delegate:self
+                                   cancelButtonTitle:@"Sim"
+                                   otherButtonTitles:@"Não", nil];
+            [alerta show];
+        }
     }
     else if (stCodAuto == 400)
     {
@@ -297,6 +314,23 @@
 - (IBAction)btnScannerQR:(id)sender
 {
     [self presentViewController:_reader animated:YES completion:nil];
+}
+
+#pragma mark - Alert Dekegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        NSURL *settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        [[UIApplication sharedApplication] openURL:settingsURL];
+    }
+    else
+    {
+        NSDictionary *codigoJson = [self formatterToDictionary: responseData];
+        [[Util shared] setRespostaChamada:codigoJson];
+        [[Util shared] setLocalizacaoHabilitado:NO];
+        [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
+    }
 }
 
 @end

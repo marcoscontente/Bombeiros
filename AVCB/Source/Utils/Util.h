@@ -20,6 +20,7 @@
 
 + (Util*) shared;
 @property (nonatomic) double distance;
+@property (nonatomic) BOOL localizacaoHabilitado;
 @property (strong) AutoRes *resAuto;
 @property (strong) NSDictionary *respostaChamada;
 
