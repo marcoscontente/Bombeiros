@@ -375,7 +375,7 @@ Você poderá informar ao Corpo de Bombeiros uma não conformidade para serem to
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aoh-6q-jyf">
+                            <webView alpha="0.0" contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aoh-6q-jyf">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
@@ -396,7 +396,7 @@ Você poderá informar ao Corpo de Bombeiros uma não conformidade para serem to
                     </view>
                     <connections>
                         <outlet property="act" destination="SQj-Hd-uHD" id="Eda-mU-bce"/>
-                        <outlet property="webView" destination="Aoh-6q-jyf" id="jwZ-9x-2Lq"/>
+                        <outlet property="webView" destination="Aoh-6q-jyf" id="efN-x3-w8r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZp-vb-7f3" userLabel="First Responder" sceneMemberID="firstResponder"/>

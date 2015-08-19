@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WebViewController : UIViewController <UIWebViewDelegate>
+@interface WebViewController : UIViewController <UIWebViewDelegate, UIAlertViewDelegate>
 {
-    IBOutlet UIWebView *webView;
     IBOutlet UIActivityIndicatorView *act;
 }
 
 @property (nonatomic)NSString *url;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
