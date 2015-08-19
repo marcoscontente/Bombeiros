@@ -10,7 +10,8 @@
 
 @implementation WebViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     webView.delegate = self;
 }
@@ -20,7 +21,8 @@
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webViewParam {
+- (void)webViewDidFinishLoad:(UIWebView *)webViewParam
+{
     [act stopAnimating];
     [UIView animateWithDuration:.5 animations:^{
         webView.alpha = 1.0;

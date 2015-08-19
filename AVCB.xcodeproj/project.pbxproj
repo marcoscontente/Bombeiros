@@ -38,7 +38,6 @@
 		B55F63621A266138003EA3D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B55F63611A266138003EA3D1 /* AppDelegate.m */; };
 		B55F63651A266154003EA3D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B55F63631A266154003EA3D1 /* LaunchScreen.xib */; };
 		B55F63661A266154003EA3D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55F63641A266154003EA3D1 /* Main.storyboard */; };
-		B55F63691A266163003EA3D1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B55F63671A266163003EA3D1 /* Info.plist */; };
 		B55F636A1A266163003EA3D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B55F63681A266163003EA3D1 /* main.m */; };
 		B55F63831A27586F003EA3D1 /* turorial22x22@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B55F63811A27586F003EA3D1 /* turorial22x22@2x.png */; };
 		B55F63841A27586F003EA3D1 /* turorial22x22@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B55F63821A27586F003EA3D1 /* turorial22x22@3x.png */; };
@@ -398,7 +397,7 @@
 		B55F63261A2656D2003EA3D1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Prodesp;
 				TargetAttributes = {
 					B55F632D1A2656D2003EA3D1 = {
@@ -440,7 +439,6 @@
 				B537ED3F1B68218E001C43DF /* icon76.png in Resources */,
 				B52EB3A11B69120900E5C95F /* splash2208x1242.png in Resources */,
 				B537ED401B68218E001C43DF /* icon76@2x.png in Resources */,
-				B55F63691A266163003EA3D1 /* Info.plist in Resources */,
 				B52EB39D1B69120900E5C95F /* splash768x1024.png in Resources */,
 				B55F63661A266154003EA3D1 /* Main.storyboard in Resources */,
 				B52EB39F1B69120900E5C95F /* splash1536x2048.png in Resources */,
