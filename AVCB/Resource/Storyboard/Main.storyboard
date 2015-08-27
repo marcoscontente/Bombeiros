@@ -140,7 +140,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Btu-dt-9aV">
                                                     <rect key="frame" x="158" y="5" width="285.5" height="50"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone60x60.png" translatesAutoresizingMaskIntoConstraints="NO" id="LO6-Z3-4JG">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconHome.png" translatesAutoresizingMaskIntoConstraints="NO" id="LO6-Z3-4JG">
                                                             <rect key="frame" x="8" y="-5" width="60" height="60"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AVCB - PMESP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49G-iq-HXW">
@@ -343,7 +343,7 @@ Você poderá informar ao Corpo de Bombeiros uma não conformidade para serem to
     <resources>
         <image name="banner1536.png" width="1536" height="377"/>
         <image name="ic_cam.png" width="384" height="384"/>
-        <image name="icone60x60.png" width="60" height="60"/>
+        <image name="iconHome.png" width="60" height="60"/>
         <image name="turorial22x22.png" width="44" height="44"/>
     </resources>
 </document>
