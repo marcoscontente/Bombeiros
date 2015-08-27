@@ -49,6 +49,9 @@
 		B5C3FA141A279DE60062F014 /* AutoRes.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C3FA131A279DE60062F014 /* AutoRes.m */; };
 		B5C3FA1E1A27A12C0062F014 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C3FA1D1A27A12C0062F014 /* Util.m */; };
 		B5C3FA201A27A3D40062F014 /* AVCB-Configuracoes.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5C3FA1F1A27A3D40062F014 /* AVCB-Configuracoes.plist */; };
+		FF1B3C951B8F5F560081E66A /* banner1536.png in Resources */ = {isa = PBXBuildFile; fileRef = FF1B3C941B8F5F560081E66A /* banner1536.png */; };
+		FF1B3C991B8F61400081E66A /* AVCBBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = FF1B3C981B8F61400081E66A /* AVCBBanner.m */; };
+		FF1B3C9C1B8F76B50081E66A /* ic_cam.png in Resources */ = {isa = PBXBuildFile; fileRef = FF1B3C9B1B8F76B50081E66A /* ic_cam.png */; };
 		FFDD80281B7D0C4100681462 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD80271B7D0C4100681462 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +121,10 @@
 		B5C3FA1F1A27A3D40062F014 /* AVCB-Configuracoes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "AVCB-Configuracoes.plist"; path = "Resource/Supporting Files/AVCB-Configuracoes.plist"; sourceTree = "<group>"; };
 		CB72BBBDD1D00ECFF5CAB33D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8CD1A60E2D6556E31215744 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FF1B3C941B8F5F560081E66A /* banner1536.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner1536.png; path = Resource/Images/banner/banner1536.png; sourceTree = "<group>"; };
+		FF1B3C971B8F61400081E66A /* AVCBBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVCBBanner.h; path = Source/Custom/AVCBBanner.h; sourceTree = "<group>"; };
+		FF1B3C981B8F61400081E66A /* AVCBBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AVCBBanner.m; path = Source/Custom/AVCBBanner.m; sourceTree = "<group>"; };
+		FF1B3C9B1B8F76B50081E66A /* ic_cam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_cam.png; path = Resource/Images/home/ic_cam.png; sourceTree = "<group>"; };
 		FFDD80261B7D0C4100681462 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = Source/Controllers/WebViewController.h; sourceTree = "<group>"; };
 		FFDD80271B7D0C4100681462 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = Source/Controllers/WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -249,6 +256,7 @@
 		B55F63581A2660E1003EA3D1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				FF1B3C961B8F61240081E66A /* Custom */,
 				B5C3FA151A279E6F0062F014 /* Dominio */,
 				B55F635E1A266109003EA3D1 /* Utils */,
 				B55F635D1A266105003EA3D1 /* Models */,
@@ -260,6 +268,8 @@
 		B55F63591A2660E6003EA3D1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FF1B3C9A1B8F76A70081E66A /* home */,
+				FF1B3C931B8F5E9D0081E66A /* banner */,
 				B537ED411B68219A001C43DF /* Splash */,
 				B537ED2A1B682173001C43DF /* Icons */,
 				B52EB3A21B691D4A00E5C95F /* iconHome.png */,
@@ -349,6 +359,31 @@
 				1C415F0AF01E3607B72833BE /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FF1B3C931B8F5E9D0081E66A /* banner */ = {
+			isa = PBXGroup;
+			children = (
+				FF1B3C941B8F5F560081E66A /* banner1536.png */,
+			);
+			name = banner;
+			sourceTree = "<group>";
+		};
+		FF1B3C961B8F61240081E66A /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				FF1B3C971B8F61400081E66A /* AVCBBanner.h */,
+				FF1B3C981B8F61400081E66A /* AVCBBanner.m */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		FF1B3C9A1B8F76A70081E66A /* home */ = {
+			isa = PBXGroup;
+			children = (
+				FF1B3C9B1B8F76B50081E66A /* ic_cam.png */,
+			);
+			name = home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,6 +494,8 @@
 				B52EB39A1B69120900E5C95F /* Default-667h@2x.png in Resources */,
 				B52EB3A51B691D4A00E5C95F /* iconHome.png in Resources */,
 				B55F63841A27586F003EA3D1 /* turorial22x22@3x.png in Resources */,
+				FF1B3C9C1B8F76B50081E66A /* ic_cam.png in Resources */,
+				FF1B3C951B8F5F560081E66A /* banner1536.png in Resources */,
 				B537ED371B68218E001C43DF /* icon29@2x.png in Resources */,
 				B52EB3A71B691D4A00E5C95F /* iconHome@3x.png in Resources */,
 				B537ED391B68218E001C43DF /* icon40.png in Resources */,
@@ -514,6 +551,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1B3C991B8F61400081E66A /* AVCBBanner.m in Sources */,
 				B53178C01A48985C00B370B1 /* Home.m in Sources */,
 				FFDD80281B7D0C4100681462 /* WebViewController.m in Sources */,
 				B52FEBAC1B822E1C00973233 /* Reachability.m in Sources */,

@@ -15,6 +15,7 @@
 
 @interface Home : UITableViewController <ZBarReaderViewDelegate, ZBarReaderDelegate, UIAlertViewDelegate, CLLocationManagerDelegate>
 
+
 - (IBAction)btnScannerQR:(id)sender;
 
 @end

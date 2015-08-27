@@ -30,137 +30,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner1536.png" id="9Lj-qd-veS" customClass="AVCBBanner">
+                            <rect key="frame" x="0.0" y="64" width="600" height="89"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <sections>
                             <tableViewSection id="M6y-uX-Uee">
                                 <cells>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="uEy-QJ-s6f">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uEy-QJ-s6f" id="9FE-Zw-uup">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9mD-gT-PFO">
-                                                    <rect key="frame" x="158" y="5" width="285.5" height="50"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconHome.png" translatesAutoresizingMaskIntoConstraints="NO" id="5tz-ad-wbA">
-                                                            <rect key="frame" x="8" y="-5" width="60" height="60"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AVCB - PMESP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5G-Ha-XRf">
-                                                            <rect key="frame" x="94" y="15" width="155.5" height="26.5"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="285.5" id="Vm2-pn-by9"/>
-                                                        <constraint firstAttribute="height" constant="50" id="uPR-bC-8Mg"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="9mD-gT-PFO" secondAttribute="centerX" id="JWq-Pq-MvH"/>
-                                                <constraint firstAttribute="centerY" secondItem="9mD-gT-PFO" secondAttribute="centerY" id="dvx-2I-L2c"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="MZR-Zl-11q">
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="43" id="MZR-Zl-11q">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MZR-Zl-11q" id="Sp8-ah-4LH">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atestado de vistoria do corpo de Bombeiros do Estado de São Paulo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpK-Cy-fZa">
-                                                    <rect key="frame" x="159" y="4" width="283" height="41"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LICENÇA DO CORPO DE BOMBEIROS AVCB/CLCB" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpK-Cy-fZa">
+                                                    <rect key="frame" x="8" y="4" width="584" height="41"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="283" id="BiY-lQ-GZD"/>
-                                                        <constraint firstAttribute="height" constant="41" id="JeR-vA-EuZ"/>
+                                                        <constraint firstAttribute="height" constant="41" id="BsF-eh-hxi"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CpK-Cy-fZa" firstAttribute="top" secondItem="Sp8-ah-4LH" secondAttribute="top" constant="4" id="jJq-js-dcB"/>
+                                                <constraint firstAttribute="trailing" secondItem="CpK-Cy-fZa" secondAttribute="trailing" constant="8" id="te0-wX-AVT"/>
+                                                <constraint firstItem="CpK-Cy-fZa" firstAttribute="leading" secondItem="Sp8-ah-4LH" secondAttribute="leading" constant="8" id="v5h-pL-Oiy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="175" id="gdg-X9-Ik2">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gdg-X9-Ik2" id="Zxg-eV-c2q">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WjU-9W-5az">
+                                                    <rect key="frame" x="260" y="65" width="80" height="77"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="39N-hC-gX0"/>
+                                                        <constraint firstAttribute="height" constant="77" id="9Il-oX-UBd"/>
+                                                    </constraints>
+                                                    <state key="normal" image="ic_cam.png">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="btnScannerQR:" destination="RPF-sQ-N2n" eventType="touchUpInside" id="0Gw-K9-wqy"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clique na imagem para consultar o QRCode" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdh-l2-RGw">
+                                                    <rect key="frame" x="8" y="8" width="584" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="49" id="CKO-aG-Bf9"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="CpK-Cy-fZa" secondAttribute="centerY" id="B0N-8r-DHx"/>
-                                                <constraint firstAttribute="centerX" secondItem="CpK-Cy-fZa" secondAttribute="centerX" id="fGp-Ob-8kr"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="160" id="gdg-X9-Ik2">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gdg-X9-Ik2" id="Zxg-eV-c2q">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clique aqui e posicione a câmera no QR Code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdh-l2-RGw">
-                                                    <rect key="frame" x="205" y="58" width="191" height="44"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="191" id="4ct-Jr-25N"/>
-                                                        <constraint firstAttribute="height" constant="44" id="A9s-UM-zPQ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WjU-9W-5az">
-                                                    <rect key="frame" x="205" y="30" width="191" height="100"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="191" id="mvz-Xv-xk8"/>
-                                                        <constraint firstAttribute="height" constant="100" id="mxF-Ei-HFw"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                                    <connections>
-                                                        <action selector="btnScannerQR:" destination="RPF-sQ-N2n" eventType="touchUpInside" id="0Gw-K9-wqy"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="WjU-9W-5az" secondAttribute="centerX" id="1iH-y7-2BE"/>
-                                                <constraint firstAttribute="centerX" secondItem="cdh-l2-RGw" secondAttribute="centerX" id="2OF-wb-orD"/>
-                                                <constraint firstAttribute="centerY" secondItem="WjU-9W-5az" secondAttribute="centerY" id="NDy-Si-j80"/>
-                                                <constraint firstAttribute="centerY" secondItem="cdh-l2-RGw" secondAttribute="centerY" id="PSR-oj-57z"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="1P0-4y-s8b">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1P0-4y-s8b" id="qa2-dJ-mdw">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywk-PV-CWo">
-                                                    <rect key="frame" x="28" y="10" width="185" height="40"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CD2-w7-eab">
-                                                            <rect key="frame" x="0.0" y="0.0" width="185" height="40"/>
-                                                            <state key="normal">
-                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                        </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08q-Gv-duB">
-                                                            <rect key="frame" x="5" y="5" width="175" height="30"/>
-                                                            <attributedString key="attributedText">
-                                                                <fragment content="Não conseguiu fazer a leitura? Clique aqui.">
-                                                                    <attributes>
-                                                                        <color key="NSColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <font key="NSFont" size="12" name="HelveticaNeue-Bold"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                        <integer key="NSUnderline" value="1"/>
-                                                                        <color key="NSUnderlineColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="7F4-db-oLe"/>
-                                                        <constraint firstAttribute="width" constant="185" id="z4L-m3-BqQ"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="ywk-PV-CWo" secondAttribute="centerY" id="9wU-1k-0Zm"/>
-                                                <constraint firstItem="ywk-PV-CWo" firstAttribute="leading" secondItem="qa2-dJ-mdw" secondAttribute="leadingMargin" constant="20" id="BiJ-gH-vZ1"/>
+                                                <constraint firstItem="cdh-l2-RGw" firstAttribute="top" secondItem="Zxg-eV-c2q" secondAttribute="top" constant="8" id="89o-MW-fX1"/>
+                                                <constraint firstItem="cdh-l2-RGw" firstAttribute="leading" secondItem="Zxg-eV-c2q" secondAttribute="leading" constant="8" id="BwA-Uq-3Cu"/>
+                                                <constraint firstAttribute="centerX" secondItem="WjU-9W-5az" secondAttribute="centerX" id="New-n2-WYF"/>
+                                                <constraint firstAttribute="trailing" secondItem="cdh-l2-RGw" secondAttribute="trailing" constant="8" id="Wz7-El-LF0"/>
+                                                <constraint firstItem="WjU-9W-5az" firstAttribute="top" secondItem="cdh-l2-RGw" secondAttribute="bottom" constant="8" id="t8X-dz-Q4V"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -314,6 +246,10 @@ Você poderá informar ao Corpo de Bombeiros uma não conformidade para serem to
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner1536.png" id="63D-D8-5td" customClass="AVCBBanner">
+                            <rect key="frame" x="0.0" y="64" width="600" height="89"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="xwU-FD-blZ" detailTextLabel="WtQ-yO-aub" style="IBUITableViewCellStyleValue2" id="8sT-r8-AMz">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -405,7 +341,8 @@ Você poderá informar ao Corpo de Bombeiros uma não conformidade para serem to
         </scene>
     </scenes>
     <resources>
-        <image name="iconHome.png" width="60" height="60"/>
+        <image name="banner1536.png" width="1536" height="377"/>
+        <image name="ic_cam.png" width="384" height="384"/>
         <image name="icone60x60.png" width="60" height="60"/>
         <image name="turorial22x22.png" width="44" height="44"/>
     </resources>

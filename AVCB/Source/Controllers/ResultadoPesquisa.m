@@ -46,7 +46,7 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"Auto de Vistoria do Corpo de Bombeiros do Estado de São Paulo";
+    return @"Licença do corpo de bombeiros\nAVCB/CLCB";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -83,7 +83,8 @@
                 cell.detailTextLabel.text = [autoData objectForKey:@"Observacoes"];
                 break;
             case 6:
-                raioCell.textLabel.text = @"Leitura fora do raio de pesquisa";
+                raioCell.textLabel.numberOfLines = 3;
+                raioCell.textLabel.text = @"\"A sua localização encontra-se a mais de 100 m do endereço indicado\"!";
                 break;
                 
             default:
