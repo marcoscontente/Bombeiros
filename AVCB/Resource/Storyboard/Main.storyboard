@@ -30,7 +30,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner1536.png" id="9Lj-qd-veS" customClass="AVCBBanner">
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner.png" id="9Lj-qd-veS" customClass="AVCBBanner">
                             <rect key="frame" x="0.0" y="64" width="600" height="89"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -140,7 +140,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Btu-dt-9aV">
                                                     <rect key="frame" x="158" y="5" width="285.5" height="50"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone60x60.png" translatesAutoresizingMaskIntoConstraints="NO" id="LO6-Z3-4JG">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon-58.png" translatesAutoresizingMaskIntoConstraints="NO" id="LO6-Z3-4JG">
                                                             <rect key="frame" x="8" y="-5" width="60" height="60"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AVCB - PMESP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49G-iq-HXW">
@@ -242,11 +242,11 @@ Você poderá informar ao Corpo de Bombeiros uma não conformidade para serem to
         <scene sceneID="bo0-qK-TAl">
             <objects>
                 <tableViewController id="d8j-tF-R2o" customClass="ResultadoPesquisa" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Tf3-il-1eF">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Tf3-il-1eF">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner1536.png" id="63D-D8-5td" customClass="AVCBBanner">
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner.png" id="63D-D8-5td" customClass="AVCBBanner">
                             <rect key="frame" x="0.0" y="64" width="600" height="89"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -341,9 +341,9 @@ Você poderá informar ao Corpo de Bombeiros uma não conformidade para serem to
         </scene>
     </scenes>
     <resources>
-        <image name="banner1536.png" width="1536" height="377"/>
+        <image name="Icon-58.png" width="58" height="58"/>
+        <image name="banner.png" width="2208" height="288"/>
         <image name="ic_cam.png" width="384" height="384"/>
-        <image name="icone60x60.png" width="60" height="60"/>
         <image name="turorial22x22.png" width="44" height="44"/>
     </resources>
 </document>
