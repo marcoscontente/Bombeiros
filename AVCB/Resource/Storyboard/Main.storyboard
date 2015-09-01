@@ -200,17 +200,13 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IN-KY-QjU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IN-KY-QjU">
                                                     <rect key="frame" x="151" y="49" width="299" height="271"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="271" id="G8d-MI-9fI"/>
                                                         <constraint firstAttribute="width" constant="299" id="s7E-ez-Q0n"/>
                                                     </constraints>
-                                                    <string key="text">Este aplicativo permite ao cidadão saber se algumestabelecimento público comercial possui o Auto de vistoria do corpo de Bombeiros do Estado de São Paulo - AVCB e se o mesmo está vigente e conforme.
-
-Estando presente no estabelecimento encontre o AVCB e posicione a câmera de seu celular no QR Code impresso no Atestado e verifique junto ao Corpo de Bombeiros a atual situação do AVCB bem como a sua correta localidade.
-
-Você poderá informar ao Corpo de Bombeiros uma não conformidade para serem tomadas as providências necessárias.</string>
+                                                    <mutableString key="text">A licença do Corpo de Bombeiros atesta que uma edificação está regularizada junto ao Corpo de Bombeiros. Um documento de liberação é emitido após a triagem e a aprovação do processo. Esse documento é fornecido ao responsável pelo estabelecimento e deve estar acessível, em local visível, disponível para todo cidadão. Por meio deste aplicativo é possível realizar a leitura do QRCODE no documento e conferir a situação atual da licença emitida pelo Corpo de Bombeiros para o local ou estabelecimento. Basta acessar o aplicativo e apontar o leitor para o QRCODE.</mutableString>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
