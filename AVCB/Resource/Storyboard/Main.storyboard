@@ -140,6 +140,9 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Btu-dt-9aV">
                                                     <rect key="frame" x="158" y="5" width="285.5" height="50"/>
                                                     <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconHome.png" translatesAutoresizingMaskIntoConstraints="NO" id="LO6-Z3-4JG">
+                                                            <rect key="frame" x="8" y="-5" width="60" height="60"/>
+                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AVCB - PMESP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49G-iq-HXW">
                                                             <rect key="frame" x="94" y="15" width="155.5" height="26.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
@@ -336,6 +339,7 @@
     <resources>
         <image name="banner.png" width="2208" height="288"/>
         <image name="ic_cam.png" width="384" height="384"/>
+        <image name="iconHome.png" width="60" height="60"/>
         <image name="turorial22x22.png" width="44" height="44"/>
     </resources>
 </document>
