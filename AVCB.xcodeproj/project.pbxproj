@@ -59,6 +59,11 @@
 		FF6480351B95CA0F00A31E79 /* splash2048x1236.png in Resources */ = {isa = PBXBuildFile; fileRef = FF64802B1B95CA0F00A31E79 /* splash2048x1236.png */; };
 		FF6480361B95CA0F00A31E79 /* splash2048x1496.png in Resources */ = {isa = PBXBuildFile; fileRef = FF64802C1B95CA0F00A31E79 /* splash2048x1496.png */; };
 		FF6480381B95CAB900A31E79 /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = FF6480371B95CAB900A31E79 /* banner.png */; };
+		FF7E8BDE1B96202400ECC45F /* banner_320.png in Resources */ = {isa = PBXBuildFile; fileRef = FF7E8BD91B96202400ECC45F /* banner_320.png */; };
+		FF7E8BDF1B96202400ECC45F /* banner_640.png in Resources */ = {isa = PBXBuildFile; fileRef = FF7E8BDA1B96202400ECC45F /* banner_640.png */; };
+		FF7E8BE01B96202400ECC45F /* banner_768x89.png in Resources */ = {isa = PBXBuildFile; fileRef = FF7E8BDB1B96202400ECC45F /* banner_768x89.png */; };
+		FF7E8BE11B96202400ECC45F /* banner_960.png in Resources */ = {isa = PBXBuildFile; fileRef = FF7E8BDC1B96202400ECC45F /* banner_960.png */; };
+		FF7E8BE21B96202400ECC45F /* banner_1536x178.png in Resources */ = {isa = PBXBuildFile; fileRef = FF7E8BDD1B96202400ECC45F /* banner_1536x178.png */; };
 		FFDD80281B7D0C4100681462 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD80271B7D0C4100681462 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +144,11 @@
 		FF64802B1B95CA0F00A31E79 /* splash2048x1236.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash2048x1236.png; path = Resource/Images/Splash/splash2048x1236.png; sourceTree = "<group>"; };
 		FF64802C1B95CA0F00A31E79 /* splash2048x1496.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash2048x1496.png; path = Resource/Images/Splash/splash2048x1496.png; sourceTree = "<group>"; };
 		FF6480371B95CAB900A31E79 /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner.png; path = Resource/Images/banner/banner.png; sourceTree = "<group>"; };
+		FF7E8BD91B96202400ECC45F /* banner_320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner_320.png; path = Resource/Images/banner/banner_320.png; sourceTree = "<group>"; };
+		FF7E8BDA1B96202400ECC45F /* banner_640.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner_640.png; path = Resource/Images/banner/banner_640.png; sourceTree = "<group>"; };
+		FF7E8BDB1B96202400ECC45F /* banner_768x89.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner_768x89.png; path = Resource/Images/banner/banner_768x89.png; sourceTree = "<group>"; };
+		FF7E8BDC1B96202400ECC45F /* banner_960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner_960.png; path = Resource/Images/banner/banner_960.png; sourceTree = "<group>"; };
+		FF7E8BDD1B96202400ECC45F /* banner_1536x178.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner_1536x178.png; path = Resource/Images/banner/banner_1536x178.png; sourceTree = "<group>"; };
 		FFDD80261B7D0C4100681462 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = Source/Controllers/WebViewController.h; sourceTree = "<group>"; };
 		FFDD80271B7D0C4100681462 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = Source/Controllers/WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -385,6 +395,11 @@
 		FF1B3C931B8F5E9D0081E66A /* banner */ = {
 			isa = PBXGroup;
 			children = (
+				FF7E8BD91B96202400ECC45F /* banner_320.png */,
+				FF7E8BDA1B96202400ECC45F /* banner_640.png */,
+				FF7E8BDB1B96202400ECC45F /* banner_768x89.png */,
+				FF7E8BDC1B96202400ECC45F /* banner_960.png */,
+				FF7E8BDD1B96202400ECC45F /* banner_1536x178.png */,
 				FF6480371B95CAB900A31E79 /* banner.png */,
 			);
 			name = banner;
@@ -501,21 +516,26 @@
 				FF6480151B95C94200A31E79 /* Icon-40.png in Resources */,
 				FF6480191B95C94200A31E79 /* Icon-72.png in Resources */,
 				FF64801E1B95C94200A31E79 /* Icon-114.png in Resources */,
+				FF7E8BDE1B96202400ECC45F /* banner_320.png in Resources */,
 				FF64801B1B95C94200A31E79 /* Icon-80.png in Resources */,
 				B55F63831A27586F003EA3D1 /* turorial22x22@2x.png in Resources */,
 				B55F63861A27587C003EA3D1 /* turorial22x22.png in Resources */,
+				FF7E8BE01B96202400ECC45F /* banner_768x89.png in Resources */,
 				FF6480141B95C94200A31E79 /* Icon-29.png in Resources */,
 				FF6480381B95CAB900A31E79 /* banner.png in Resources */,
+				FF7E8BE11B96202400ECC45F /* banner_960.png in Resources */,
 				B52EB39E1B69120900E5C95F /* splash1024x768.png in Resources */,
 				FF64802F1B95CA0F00A31E79 /* splash640x1136.png in Resources */,
 				FF6480221B95C94200A31E79 /* Icon-180.png in Resources */,
 				FF6480211B95C94200A31E79 /* Icon-152.png in Resources */,
 				B55F63651A266154003EA3D1 /* LaunchScreen.xib in Resources */,
 				FF6480161B95C94200A31E79 /* Icon-50.png in Resources */,
+				FF7E8BDF1B96202400ECC45F /* banner_640.png in Resources */,
 				B55F633F1A2656D2003EA3D1 /* Images.xcassets in Resources */,
 				FF6480181B95C94200A31E79 /* Icon-58.png in Resources */,
 				B5C3FA201A27A3D40062F014 /* AVCB-Configuracoes.plist in Resources */,
 				FF6480201B95C94200A31E79 /* Icon-144.png in Resources */,
+				FF7E8BE21B96202400ECC45F /* banner_1536x178.png in Resources */,
 				FF6480351B95CA0F00A31E79 /* splash2048x1236.png in Resources */,
 				B55F63841A27586F003EA3D1 /* turorial22x22@3x.png in Resources */,
 				FF1B3C9C1B8F76B50081E66A /* ic_cam.png in Resources */,
