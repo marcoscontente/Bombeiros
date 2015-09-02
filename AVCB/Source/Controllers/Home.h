@@ -13,7 +13,7 @@
 #import <MapKit/MapKit.h>
 #import "WebViewController.h"
 
-@interface Home : UITableViewController <ZBarReaderViewDelegate, ZBarReaderDelegate, UIAlertViewDelegate, CLLocationManagerDelegate>
+@interface Home : UIViewController <ZBarReaderViewDelegate, ZBarReaderDelegate, UIAlertViewDelegate, CLLocationManagerDelegate>
 
 
 - (IBAction)btnScannerQR:(id)sender;

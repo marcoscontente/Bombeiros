@@ -316,6 +316,10 @@
     [self presentViewController:_reader animated:YES completion:nil];
 }
 
+- (IBAction)verInformacoes:(id)sender {
+    [self performSegueWithIdentifier:@"segueInformacao" sender:nil];
+}
+
 #pragma mark - Alert Dekegate
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
