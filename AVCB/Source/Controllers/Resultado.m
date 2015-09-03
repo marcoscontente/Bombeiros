@@ -16,6 +16,7 @@
     autoData = [[Util shared] respostaChamada];
     distance = [[Util shared] distance];
     localizacaoHabilitado = [[Util shared] localizacaoHabilitado];
+    tabela.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 #pragma mark - UITableView Delegate

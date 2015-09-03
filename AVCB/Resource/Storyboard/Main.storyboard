@@ -235,9 +235,9 @@
                                     <constraint firstAttribute="height" constant="63" id="G1H-jd-fYt"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TJs-br-s1W">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="TJs-br-s1W">
                                 <rect key="frame" x="0.0" y="127" width="600" height="473"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="CeD-Pp-EH7" detailTextLabel="BP7-Z3-s8r" style="IBUITableViewCellStyleValue2" id="EIu-Tc-pAe">
                                         <rect key="frame" x="0.0" y="278" width="600" height="44"/>
@@ -293,6 +293,9 @@
                             <constraint firstItem="TJs-br-s1W" firstAttribute="top" secondItem="Ivv-uA-Sfh" secondAttribute="bottom" id="ueo-NJ-qBj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tabela" destination="TJs-br-s1W" id="cfe-Z7-TLz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dck-R3-j0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -14,6 +14,7 @@
     NSDictionary *autoData;
     double distance;
     BOOL localizacaoHabilitado;
+    IBOutlet UITableView *tabela;
 }
 
 @end
