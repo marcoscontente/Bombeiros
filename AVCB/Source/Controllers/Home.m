@@ -313,7 +313,13 @@
 #pragma mark - IBActions
 - (IBAction)btnScannerQR:(id)sender
 {
-    //[self chamadaServico:@{@"chave":  @"29B4CAC75FEDB50C683E6803B4580716"}];
+    /*
+                Chamada para testar no simulador 
+     
+     
+     [self chamadaServico:@{@"chave":  @"29B4CAC75FEDB50C683E6803B4580716"}];
+     
+    */
     [self presentViewController:_reader animated:YES completion:nil];
 }
 
