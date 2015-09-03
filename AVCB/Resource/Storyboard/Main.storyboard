@@ -217,10 +217,10 @@
             </objects>
             <point key="canvasLocation" x="1662" y="-337"/>
         </scene>
-        <!--View Controller-->
+        <!--Resultado-->
         <scene sceneID="RlG-gT-PXG">
             <objects>
-                <viewController id="gNb-rl-Gu3" sceneMemberID="viewController">
+                <viewController id="gNb-rl-Gu3" customClass="Resultado" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DWe-W7-pKh"/>
                         <viewControllerLayoutGuide type="bottom" id="yKE-vD-kKI"/>
@@ -277,8 +277,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="gNb-rl-Gu3" id="5ay-aR-zRc"/>
-                                    <outlet property="delegate" destination="gNb-rl-Gu3" id="7N3-Wh-WIA"/>
+                                    <outlet property="dataSource" destination="gNb-rl-Gu3" id="aJA-3U-2Ht"/>
+                                    <outlet property="delegate" destination="gNb-rl-Gu3" id="J3l-7d-4XZ"/>
                                 </connections>
                             </tableView>
                         </subviews>
