@@ -52,7 +52,7 @@
                                     <action selector="btnScannerQR:" destination="z8u-3l-NAB" eventType="touchUpInside" id="WB8-Ul-JYr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clique na imagem para consultar o QRCode" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkJ-d3-hng">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clique na imagem e focalize no QRCode da Licença" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkJ-d3-hng">
                                 <rect key="frame" x="16" y="197" width="568" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="MFQ-Eq-iEY"/>
@@ -102,81 +102,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fD1-wl-Tih" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="783" y="-313"/>
-        </scene>
-        <!--Informação-->
-        <scene sceneID="Ic9-43-uSN">
-            <objects>
-                <tableViewController id="Iux-dq-K7M" customClass="Informacao" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="JUJ-Ly-xvr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                        <sections>
-                            <tableViewSection id="EdR-4X-g4A">
-                                <cells>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="awi-cD-tda">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="awi-cD-tda" id="LVs-cg-Qel">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="FEX-Aa-gmv">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FEX-Aa-gmv" id="y7X-3E-6tX">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Atestado de vistoria do corpo de Bombeiros do Estado de São Paulo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yd7-uX-4lj">
-                                                    <rect key="frame" x="159" y="4" width="283" height="41"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="41" id="gaW-fh-5Wp"/>
-                                                        <constraint firstAttribute="width" constant="283" id="pTd-H1-JLO"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="Yd7-uX-4lj" secondAttribute="centerY" id="kff-OA-q71"/>
-                                                <constraint firstAttribute="centerX" secondItem="Yd7-uX-4lj" secondAttribute="centerX" id="yYK-uR-dhn"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="340" id="KB1-8b-nbz">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KB1-8b-nbz" id="vhY-cI-EsG">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8IX-jZ-eZ7">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="340"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
-                                                </webView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="8IX-jZ-eZ7" firstAttribute="leading" secondItem="vhY-cI-EsG" secondAttribute="leading" id="gDr-WH-Apc"/>
-                                                <constraint firstAttribute="bottom" secondItem="8IX-jZ-eZ7" secondAttribute="bottom" id="hDe-TY-a7s"/>
-                                                <constraint firstItem="8IX-jZ-eZ7" firstAttribute="top" secondItem="vhY-cI-EsG" secondAttribute="top" id="r3W-rA-vqg"/>
-                                                <constraint firstAttribute="trailing" secondItem="8IX-jZ-eZ7" secondAttribute="trailing" id="rsI-Uz-2Sh"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="Iux-dq-K7M" id="BOv-kL-CeX"/>
-                            <outlet property="delegate" destination="Iux-dq-K7M" id="sec-8v-MrD"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Informação" id="eFc-ug-0fx"/>
-                    <connections>
-                        <outlet property="webView" destination="8IX-jZ-eZ7" id="94A-iB-AVH"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LWJ-eE-n5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1705" y="-1"/>
         </scene>
         <!--Informacao-->
         <scene sceneID="6um-lR-kvx">
@@ -309,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dck-R3-j0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645" y="390"/>
+            <point key="canvasLocation" x="1760" y="383"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="PT2-sa-pmg">

@@ -156,7 +156,7 @@
     {
         UIAlertView *alerta = [[UIAlertView alloc]
                                initWithTitle:@"Erro de conexão"
-                               message:@"Não foi possível conectar-se ao servidor. Verifique sua conexão à internet e tente novamente."
+                               message:@"Não obtivemos sucesso em sua consulta. Para verificar a validade ou autenticidade da Licença, acesso o Portal do Via Fácil Bombeiros na internet: www.corpodebombeiros.sp.gov.br"
                                delegate:nil
                                cancelButtonTitle:@"Ok"
                                otherButtonTitles:nil];
@@ -169,7 +169,7 @@
         {
             UIAlertView *alerta = [[UIAlertView alloc]
                                    initWithTitle:@"Erro de conexão"
-                                   message:@"Não foi possível conectar-se ao servidor. Verifique sua conexão à internet e tente novamente."
+                                   message:@"Não obtivemos sucesso em sua consulta. Para verificar a validade ou autenticidade da Licença, acesso o Portal do Via Fácil Bombeiros na internet: [www.corpodebombeiros.sp.gov.br]www.corpodebombeiros.sp.gov.br"
                                    delegate:nil
                                    cancelButtonTitle:@"Ok"
                                    otherButtonTitles:nil];
@@ -179,7 +179,7 @@
         {
             UIAlertView *alerta = [[UIAlertView alloc]
                                    initWithTitle:@"Erro de conexão"
-                                   message:@"Ocorreu um erro ao processar a requisição, tente novamente."
+                                   message:@"Não obtivemos sucesso em sua consulta. Tente novamente."
                                    delegate:nil
                                    cancelButtonTitle:@"Ok"
                                    otherButtonTitles:nil];
@@ -275,13 +275,17 @@
     BOOL modeloAVCB = [txtCodigo rangeOfString:@"AVCB:"].location != NSNotFound;
     BOOL modeloCLCB = [txtCodigo rangeOfString:@"CLCB:"].location != NSNotFound;
     
+    // acessando os nossos resources
+    NSString *pathAppSettings = [[NSBundle mainBundle] pathForResource:@"AVCB-Configuracoes" ofType:@"plist"];
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:pathAppSettings];
+    
     if (modeloAVCB)
     {
         // chamamos a url do bombeiro
-        [self performSegueWithIdentifier:@"segueWebView" sender:@"http://www2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARAVCB.ASPX"];
+        [self performSegueWithIdentifier:@"segueWebView" sender:[dict objectForKey:@"Url_AVCB"]] ;
     }
     else if (modeloCLCB) {
-        [self performSegueWithIdentifier:@"segueWebView" sender:@"http://www2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARCLCB.ASPX"];
+        [self performSegueWithIdentifier:@"segueWebView" sender:[dict objectForKey:@"Url_CLCB"]];
     }
     else
     {
