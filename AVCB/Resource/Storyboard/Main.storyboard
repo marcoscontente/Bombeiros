@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -95,9 +94,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="Iux-dq-K7M" kind="show" identifier="segueInformacao" id="9mc-3z-AaQ"/>
                         <segue destination="gNb-rl-Gu3" kind="show" identifier="seguePesquisa" id="iUw-KY-LA4"/>
                         <segue destination="OW4-lm-x4U" kind="show" id="yF4-sf-7yT"/>
+                        <segue destination="bYs-9H-rYj" kind="show" identifier="segueInformacao" id="5IR-aT-NzP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fD1-wl-Tih" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,7 +106,7 @@
         <!--Informação-->
         <scene sceneID="Ic9-43-uSN">
             <objects>
-                <tableViewController id="Iux-dq-K7M" sceneMemberID="viewController">
+                <tableViewController id="Iux-dq-K7M" customClass="Informacao" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="JUJ-Ly-xvr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,31 +118,6 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="awi-cD-tda" id="LVs-cg-Qel">
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Btu-dt-9aV">
-                                                    <rect key="frame" x="158" y="5" width="285.5" height="50"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Icon-100.png" translatesAutoresizingMaskIntoConstraints="NO" id="LO6-Z3-4JG">
-                                                            <rect key="frame" x="8" y="-5" width="60" height="60"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AVCB - PMESP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49G-iq-HXW">
-                                                            <rect key="frame" x="94" y="15" width="155.5" height="26.5"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="W11-X9-0hT"/>
-                                                        <constraint firstAttribute="width" constant="285.5" id="x9e-QK-Jf5"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="Btu-dt-9aV" secondAttribute="centerY" id="3ZE-8o-E9E"/>
-                                                <constraint firstAttribute="centerX" secondItem="Btu-dt-9aV" secondAttribute="centerX" id="L4F-bR-JdM"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="FEX-Aa-gmv">
@@ -168,38 +142,22 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="340" id="KB1-8b-nbz">
+                                    <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="340" id="KB1-8b-nbz">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KB1-8b-nbz" id="vhY-cI-EsG">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Informação Geral do Aplicativo:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caS-CL-HPU">
-                                                    <rect key="frame" x="196" y="20" width="208" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="208" id="FrG-Vz-Z1T"/>
-                                                        <constraint firstAttribute="height" constant="21" id="whN-g0-M5D"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0IN-KY-QjU">
-                                                    <rect key="frame" x="151" y="49" width="299" height="271"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="271" id="G8d-MI-9fI"/>
-                                                        <constraint firstAttribute="width" constant="299" id="s7E-ez-Q0n"/>
-                                                    </constraints>
-                                                    <string key="text">A licença do Corpo de Bombeiros atesta que uma edificação está regularizada junto ao Corpo de Bombeiros. Um documento de liberação é emitido após a triagem e a aprovação do processo. Esse documento é fornecido ao responsável pelo estabelecimento e deve estar acessível, em local visível, disponível para todo cidadão. Por meio deste aplicativo é possível realizar a leitura do QRCODE no documento e conferir a situação atual da licença emitida pelo Corpo de Bombeiros para o local ou estabelecimento. Basta acessar o aplicativo e apontar o leitor para o QRCODE.</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8IX-jZ-eZ7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="340"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                                </webView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="caS-CL-HPU" firstAttribute="top" secondItem="vhY-cI-EsG" secondAttribute="topMargin" constant="12" id="1nW-Ab-4PQ"/>
-                                                <constraint firstItem="0IN-KY-QjU" firstAttribute="top" secondItem="caS-CL-HPU" secondAttribute="bottom" constant="8" id="U8n-S9-buN"/>
-                                                <constraint firstAttribute="centerX" secondItem="0IN-KY-QjU" secondAttribute="centerX" id="Z25-rq-zax"/>
-                                                <constraint firstAttribute="centerX" secondItem="caS-CL-HPU" secondAttribute="centerX" id="cnu-OC-kV1"/>
+                                                <constraint firstItem="8IX-jZ-eZ7" firstAttribute="leading" secondItem="vhY-cI-EsG" secondAttribute="leading" id="gDr-WH-Apc"/>
+                                                <constraint firstAttribute="bottom" secondItem="8IX-jZ-eZ7" secondAttribute="bottom" id="hDe-TY-a7s"/>
+                                                <constraint firstItem="8IX-jZ-eZ7" firstAttribute="top" secondItem="vhY-cI-EsG" secondAttribute="top" id="r3W-rA-vqg"/>
+                                                <constraint firstAttribute="trailing" secondItem="8IX-jZ-eZ7" secondAttribute="trailing" id="rsI-Uz-2Sh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -212,10 +170,62 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Informação" id="eFc-ug-0fx"/>
+                    <connections>
+                        <outlet property="webView" destination="8IX-jZ-eZ7" id="94A-iB-AVH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWJ-eE-n5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1662" y="-337"/>
+            <point key="canvasLocation" x="1705" y="-1"/>
+        </scene>
+        <!--Informacao-->
+        <scene sceneID="6um-lR-kvx">
+            <objects>
+                <viewController id="bYs-9H-rYj" customClass="Informacao" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="anE-Iy-wXF"/>
+                        <viewControllerLayoutGuide type="bottom" id="QjS-an-la8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dgY-ED-vPq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_asset" translatesAutoresizingMaskIntoConstraints="NO" id="hIE-jq-cB1">
+                                <rect key="frame" x="0.0" y="64" width="600" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="8Qn-jd-kcR"/>
+                                </constraints>
+                            </imageView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ie7-VX-yfs">
+                                <rect key="frame" x="0.0" y="128" width="600" height="472"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bYs-9H-rYj" id="4ji-hQ-xVk"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hIE-jq-cB1" firstAttribute="top" secondItem="anE-Iy-wXF" secondAttribute="bottom" id="436-dU-dSt"/>
+                            <constraint firstItem="Ie7-VX-yfs" firstAttribute="leading" secondItem="dgY-ED-vPq" secondAttribute="leading" id="73A-2x-9dv"/>
+                            <constraint firstItem="QjS-an-la8" firstAttribute="top" secondItem="Ie7-VX-yfs" secondAttribute="bottom" id="Tlk-il-fzr"/>
+                            <constraint firstAttribute="trailing" secondItem="Ie7-VX-yfs" secondAttribute="trailing" id="XsF-Vr-p7t"/>
+                            <constraint firstItem="Ie7-VX-yfs" firstAttribute="top" secondItem="hIE-jq-cB1" secondAttribute="bottom" constant="1" id="eO6-9Z-Cf5"/>
+                            <constraint firstItem="Ie7-VX-yfs" firstAttribute="top" secondItem="hIE-jq-cB1" secondAttribute="bottom" constant="1" id="gUe-FU-cN2"/>
+                            <constraint firstItem="QjS-an-la8" firstAttribute="top" secondItem="Ie7-VX-yfs" secondAttribute="bottom" id="gat-Ty-NqX"/>
+                            <constraint firstAttribute="trailing" secondItem="hIE-jq-cB1" secondAttribute="trailing" id="knz-eg-Kqz"/>
+                            <constraint firstItem="Ie7-VX-yfs" firstAttribute="leading" secondItem="dgY-ED-vPq" secondAttribute="leading" id="oWl-n5-jjp"/>
+                            <constraint firstItem="hIE-jq-cB1" firstAttribute="leading" secondItem="dgY-ED-vPq" secondAttribute="leading" id="wyT-Y1-ZaV"/>
+                            <constraint firstAttribute="trailing" secondItem="Ie7-VX-yfs" secondAttribute="trailing" id="ynr-k7-Xz0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Ie7-VX-yfs" id="uis-fs-Sw7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uRY-jW-iBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1748" y="-659"/>
         </scene>
         <!--Resultado-->
         <scene sceneID="RlG-gT-PXG">
@@ -237,7 +247,7 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="TJs-br-s1W">
                                 <rect key="frame" x="0.0" y="127" width="600" height="473"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="CeD-Pp-EH7" detailTextLabel="BP7-Z3-s8r" style="IBUITableViewCellStyleValue2" id="EIu-Tc-pAe">
                                         <rect key="frame" x="0.0" y="278" width="600" height="44"/>
@@ -343,7 +353,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-100.png" width="100" height="100"/>
         <image name="banner_asset" width="640" height="83"/>
         <image name="ic_cam.png" width="384" height="384"/>
         <image name="turorial22x22.png" width="44" height="44"/>

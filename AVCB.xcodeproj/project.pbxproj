@@ -65,6 +65,7 @@
 		FF7E8BE11B96202400ECC45F /* banner_960.png in Resources */ = {isa = PBXBuildFile; fileRef = FF7E8BDC1B96202400ECC45F /* banner_960.png */; };
 		FF7E8BE21B96202400ECC45F /* banner_1536x178.png in Resources */ = {isa = PBXBuildFile; fileRef = FF7E8BDD1B96202400ECC45F /* banner_1536x178.png */; };
 		FF9844A41B971A5700EB7EC4 /* Resultado.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9844A31B971A5700EB7EC4 /* Resultado.m */; };
+		FFB7A9021BA85D13002E8236 /* Informacao.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB7A9011BA85D13002E8236 /* Informacao.m */; };
 		FFDD80281B7D0C4100681462 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDD80271B7D0C4100681462 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +153,8 @@
 		FF7E8BDD1B96202400ECC45F /* banner_1536x178.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner_1536x178.png; path = Resource/Images/banner/banner_1536x178.png; sourceTree = "<group>"; };
 		FF9844A21B971A5700EB7EC4 /* Resultado.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Resultado.h; path = Source/Controllers/Resultado.h; sourceTree = "<group>"; };
 		FF9844A31B971A5700EB7EC4 /* Resultado.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Resultado.m; path = Source/Controllers/Resultado.m; sourceTree = "<group>"; };
+		FFB7A9001BA85D13002E8236 /* Informacao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Informacao.h; path = Source/Controllers/Informacao.h; sourceTree = "<group>"; };
+		FFB7A9011BA85D13002E8236 /* Informacao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Informacao.m; path = Source/Controllers/Informacao.m; sourceTree = "<group>"; };
 		FFDD80261B7D0C4100681462 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebViewController.h; path = Source/Controllers/WebViewController.h; sourceTree = "<group>"; };
 		FFDD80271B7D0C4100681462 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebViewController.m; path = Source/Controllers/WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -347,6 +350,8 @@
 				FFDD80271B7D0C4100681462 /* WebViewController.m */,
 				FF9844A21B971A5700EB7EC4 /* Resultado.h */,
 				FF9844A31B971A5700EB7EC4 /* Resultado.m */,
+				FFB7A9001BA85D13002E8236 /* Informacao.h */,
+				FFB7A9011BA85D13002E8236 /* Informacao.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -614,6 +619,7 @@
 				B5C3FA141A279DE60062F014 /* AutoRes.m in Sources */,
 				B5C3FA1E1A27A12C0062F014 /* Util.m in Sources */,
 				FF9844A41B971A5700EB7EC4 /* Resultado.m in Sources */,
+				FFB7A9021BA85D13002E8236 /* Informacao.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
