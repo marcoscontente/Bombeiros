@@ -11,7 +11,7 @@
 	<key>Url_AVCB</key>
 	<string>http://www2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARAVCB.ASPX</string>
 	<key>Url_CLCB</key>
-	<string>http://www2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARAVCB.ASPX</string>
+	<string>http://www2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARCLCB.ASPX</string>
 	<key>Url_Producao</key>
 	<string>http://www2.policiamilitar.sp.gov.br/sgsci_mobile/ConsultaAvcb.svc/Licenca/PorQrCode/</string>
 </dict>

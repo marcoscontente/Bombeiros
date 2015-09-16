@@ -235,8 +235,8 @@
                                    initWithTitle:@"Aviso"
                                    message:@"Habilite seu GPS para verificar se a sua localização é próxima ao logradouro da licença"
                                    delegate:self
-                                   cancelButtonTitle:@"OK"
-                                   otherButtonTitles:nil];
+                                   cancelButtonTitle:@"Cancelar"
+                                   otherButtonTitles:@"Configurações", nil];
             [alerta show];
         }
     }
@@ -304,7 +304,8 @@
     
     if (modeloAVCB)
     {
-        // chamamos a url do bombeiro
+        // chamamos a url do bombeiro   @string/Url_AVCB
+        
         [self performSegueWithIdentifier:@"segueWebView" sender:[dict objectForKey:@"Url_AVCB"]] ;
     }
     else if (modeloCLCB || modeloSLCB) {
@@ -315,7 +316,9 @@
         codigoJson = [self formatterToDictionary: txtCodigo];
         if (codigoJson == NULL)
         {
-            [[[UIAlertView alloc] initWithTitle:@"Atenção"  message:@"QRCode Inválido!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+    
+            [self performSegueWithIdentifier:@"segueWebView" sender:@"http://www.corpodebombeiros.sp.gov.br"];
+            
         }
         else
         {
@@ -352,12 +355,8 @@
 #pragma mark - Alert Dekegate
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSDictionary *codigoJson = [self formatterToDictionary: responseData];
-    [[Util shared] setRespostaChamada:codigoJson];
-    [[Util shared] setLocalizacaoHabilitado:NO];
-    [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
-    /*
-    if (buttonIndex == 0)
+    
+    if (buttonIndex == 1)
     {
         NSURL *settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
         [[UIApplication sharedApplication] openURL:settingsURL];
@@ -369,7 +368,7 @@
         [[Util shared] setLocalizacaoHabilitado:NO];
         [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
     }
-     */
+
 }
 
 @end
