@@ -18,7 +18,6 @@
 		B55F633F1A2656D2003EA3D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55F633E1A2656D2003EA3D1 /* Images.xcassets */; };
 		B55F634E1A2656D3003EA3D1 /* AVCBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B55F634D1A2656D3003EA3D1 /* AVCBTests.m */; };
 		B55F63621A266138003EA3D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B55F63611A266138003EA3D1 /* AppDelegate.m */; };
-		B55F63651A266154003EA3D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B55F63631A266154003EA3D1 /* LaunchScreen.xib */; };
 		B55F63661A266154003EA3D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55F63641A266154003EA3D1 /* Main.storyboard */; };
 		B55F636A1A266163003EA3D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B55F63681A266163003EA3D1 /* main.m */; };
 		B55F63831A27586F003EA3D1 /* turorial22x22@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B55F63811A27586F003EA3D1 /* turorial22x22@2x.png */; };
@@ -96,7 +95,6 @@
 		B55F634D1A2656D3003EA3D1 /* AVCBTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVCBTests.m; sourceTree = "<group>"; };
 		B55F63601A266138003EA3D1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Source/Controllers/Main/AppDelegate.h; sourceTree = "<group>"; };
 		B55F63611A266138003EA3D1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Source/Controllers/Main/AppDelegate.m; sourceTree = "<group>"; };
-		B55F63631A266154003EA3D1 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = Resource/Storyboard/LaunchScreen.xib; sourceTree = "<group>"; };
 		B55F63641A266154003EA3D1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resource/Storyboard/Main.storyboard; sourceTree = "<group>"; };
 		B55F63671A266163003EA3D1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Resource/Supporting Files/Info.plist"; sourceTree = "<group>"; };
 		B55F63681A266163003EA3D1 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Resource/Supporting Files/main.m"; sourceTree = "<group>"; };
@@ -319,7 +317,6 @@
 		B55F635A1A2660EC003EA3D1 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				B55F63631A266154003EA3D1 /* LaunchScreen.xib */,
 				B55F63641A266154003EA3D1 /* Main.storyboard */,
 			);
 			name = Storyboard;
@@ -533,7 +530,6 @@
 				FF64802F1B95CA0F00A31E79 /* splash640x1136.png in Resources */,
 				FF6480221B95C94200A31E79 /* Icon-180.png in Resources */,
 				FF6480211B95C94200A31E79 /* Icon-152.png in Resources */,
-				B55F63651A266154003EA3D1 /* LaunchScreen.xib in Resources */,
 				FF6480161B95C94200A31E79 /* Icon-50.png in Resources */,
 				FF7E8BDF1B96202400ECC45F /* banner_640.png in Resources */,
 				B55F633F1A2656D2003EA3D1 /* Images.xcassets in Resources */,

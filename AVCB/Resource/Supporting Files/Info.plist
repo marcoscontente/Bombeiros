@@ -44,8 +44,6 @@
 	<string>Habilitar localização para o aplicativo</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Habilitar localização para o aplicativo</string>
-	<key>UILaunchStoryboardName</key>
-	<string>Main</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

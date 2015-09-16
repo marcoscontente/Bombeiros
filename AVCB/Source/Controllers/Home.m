@@ -290,16 +290,7 @@
     for(symbol in results)
         break;
     
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied || ![CLLocationManager locationServicesEnabled]){
-        UIAlertView *alerta = [[UIAlertView alloc]
-                               initWithTitle:@"Aviso"
-                               message:@"Habilite seu GPS para verificar se a sua localização é próxima ao logradouro da licença"
-                               delegate:nil
-                               cancelButtonTitle:@"Ok"
-                               otherButtonTitles:nil];
-        [alerta show];
-    }
-    
+
     NSString* txtCodigo = symbol.data;
     NSDictionary *codigoJson;
     
