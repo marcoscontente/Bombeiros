@@ -73,7 +73,7 @@
                 break;
             case 6:
                 raioCell.textLabel.numberOfLines = 3;
-                raioCell.textLabel.text = @"\"A sua localização encontra-se a mais de 100 m do endereço indicado\"!";
+                raioCell.textLabel.text = @"A sua localização encontra-se a mais de 100 m do endereço indicado";
                 break;
                 
             default:
@@ -118,7 +118,7 @@
                 break;
             case 6:
                 raioCell.textLabel.numberOfLines = 3;
-                raioCell.textLabel.text = @"\"A sua localização encontra-se a menos de 100 metros do endereço acima indicado\"!";
+                raioCell.textLabel.text = @"A sua localização encontra-se a menos de 100 metros do endereço acima indicado";
                 break;
                 
             default:

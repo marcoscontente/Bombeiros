@@ -233,10 +233,10 @@
         {
             UIAlertView *alerta = [[UIAlertView alloc]
                                    initWithTitle:@"Aviso"
-                                   message:@"O serviço de localização está desabilitado para este aplicativo. Você deseja habilitá-lo?"
+                                   message:@"Habilite seu GPS para verificar se a sua localização é próxima ao logradouro da licença"
                                    delegate:self
-                                   cancelButtonTitle:@"Sim"
-                                   otherButtonTitles:@"Não", nil];
+                                   cancelButtonTitle:@"OK"
+                                   otherButtonTitles:nil];
             [alerta show];
         }
     }
@@ -352,6 +352,11 @@
 #pragma mark - Alert Dekegate
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    NSDictionary *codigoJson = [self formatterToDictionary: responseData];
+    [[Util shared] setRespostaChamada:codigoJson];
+    [[Util shared] setLocalizacaoHabilitado:NO];
+    [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
+    /*
     if (buttonIndex == 0)
     {
         NSURL *settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
@@ -364,6 +369,7 @@
         [[Util shared] setLocalizacaoHabilitado:NO];
         [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
     }
+     */
 }
 
 @end
