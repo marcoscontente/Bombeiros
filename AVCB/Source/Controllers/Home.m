@@ -45,6 +45,8 @@
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     
+    
+    
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
     {
         // Use one or the other, not both. Depending on what you put in info.plist
@@ -55,6 +57,26 @@
     locationManager.distanceFilter = kCLDistanceFilterNone;
     locationManager.desiredAccuracy = 500;
     [locationManager startUpdatingLocation];
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    self.navigationItem.title = @"Voltar";
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.navigationItem.title = @"Consulta Licenças";
+
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"segueWebView"]) {
+        WebViewController *webViewController = [segue destinationViewController];
+        webViewController.url = (NSString *)sender;
+    }
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
@@ -90,7 +112,7 @@
     NSString *password = (NSString*)[dict objectForKey:@"Password"];
     
     // obtendo nossa url base
-    NSString *ApiUrlBase = (NSString*)[dict objectForKey:@"Url_Desenvolvimento"];
+    NSString *ApiUrlBase = (NSString*)[dict objectForKey:@"Url_Producao"];
 
     // iniciando a requisicao
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -268,6 +290,15 @@
     for(symbol in results)
         break;
     
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied || ![CLLocationManager locationServicesEnabled]){
+        UIAlertView *alerta = [[UIAlertView alloc]
+                               initWithTitle:@"Aviso"
+                               message:@"Habilite seu GPS para verificar se a sua localização é próxima ao logradouro da licença"
+                               delegate:nil
+                               cancelButtonTitle:@"Ok"
+                               otherButtonTitles:nil];
+        [alerta show];
+    }
     
     NSString* txtCodigo = symbol.data;
     NSDictionary *codigoJson;
@@ -307,12 +338,7 @@
     [_reader dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"segueWebView"]) {
-        WebViewController *webViewController = [segue destinationViewController];
-        webViewController.url = (NSString *)sender;
-    }
-}
+
 
 #pragma mark - IBActions
 - (IBAction)btnScannerQR:(id)sender

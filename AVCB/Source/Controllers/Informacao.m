@@ -21,6 +21,8 @@
     webView.delegate = self;
     [webView loadHTMLString:html baseURL:nil];
     
+    self.navigationItem.title = @"Consulta Licenças";
+    
 }
 
 - (void)didReceiveMemoryWarning {
