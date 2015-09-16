@@ -39,7 +39,7 @@
                                     <constraint firstAttribute="width" constant="80" id="Dsd-zi-wSU"/>
                                     <constraint firstAttribute="height" constant="77" id="mFi-d9-yEK"/>
                                 </constraints>
-                                <state key="normal" image="icone_camera">
+                                <state key="normal" image="ic_cam.png">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -297,7 +297,7 @@
     </scenes>
     <resources>
         <image name="banner_asset" width="640" height="83"/>
-        <image name="icone_camera" width="192" height="192"/>
+        <image name="ic_cam.png" width="384" height="384"/>
         <image name="turorial22x22.png" width="44" height="44"/>
     </resources>
 </document>

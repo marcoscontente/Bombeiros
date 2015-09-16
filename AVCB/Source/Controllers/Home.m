@@ -296,6 +296,7 @@
     
     BOOL modeloAVCB = [txtCodigo rangeOfString:@"AVCB:"].location != NSNotFound;
     BOOL modeloCLCB = [txtCodigo rangeOfString:@"CLCB:"].location != NSNotFound;
+    BOOL modeloSLCB = [txtCodigo rangeOfString:@"SLCB:"].location != NSNotFound;
     
     // acessando os nossos resources
     NSString *pathAppSettings = [[NSBundle mainBundle] pathForResource:@"AVCB-Configuracoes" ofType:@"plist"];
@@ -306,7 +307,7 @@
         // chamamos a url do bombeiro
         [self performSegueWithIdentifier:@"segueWebView" sender:[dict objectForKey:@"Url_AVCB"]] ;
     }
-    else if (modeloCLCB) {
+    else if (modeloCLCB || modeloSLCB) {
         [self performSegueWithIdentifier:@"segueWebView" sender:[dict objectForKey:@"Url_CLCB"]];
     }
     else

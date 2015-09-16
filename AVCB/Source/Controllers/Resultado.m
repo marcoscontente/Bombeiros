@@ -29,7 +29,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (distance > 100 && localizacaoHabilitado)
+    if (localizacaoHabilitado)
     {
         return 7;
     }
@@ -89,7 +89,7 @@
             ;
         }
     }
-    else if (distance < 100 && localizacaoHabilitado) {
+    else if (distance <= 100 && localizacaoHabilitado) {
         switch (indexPath.row)
         {
             case 0:
