@@ -311,11 +311,9 @@
     else if (modeloCLCB || modeloSLCB) {
         [self performSegueWithIdentifier:@"segueWebView" sender:[dict objectForKey:@"Url_CLCB"]];
     }
-    else
-    {
+    else {
         codigoJson = [self formatterToDictionary: txtCodigo];
-        if (codigoJson == NULL)
-        {
+        if (codigoJson == NULL) {
     
             [self performSegueWithIdentifier:@"segueWebView" sender:@"http://www.corpodebombeiros.sp.gov.br"];
             
@@ -323,10 +321,15 @@
         else
         {
             NSDictionary *qrcode = [codigoJson objectForKey:@"qrcode"];
-            NSString *chave = [qrcode objectForKey:@"ID"];
-            jsonLatitude = [[qrcode objectForKey:@"Latitude"] doubleValue];
-            jsonLongitude = [[qrcode objectForKey:@"Longitude"] doubleValue];
-            [self chamadaServico:@{@"chave":chave}];
+            if (qrcode != nil) {
+                NSString *chave = [qrcode objectForKey:@"ID"];
+                jsonLatitude = [[qrcode objectForKey:@"Latitude"] doubleValue];
+                jsonLongitude = [[qrcode objectForKey:@"Longitude"] doubleValue];
+                [self chamadaServico:@{@"chave":chave}];
+            }
+            else {
+                [self performSegueWithIdentifier:@"segueWebView" sender:@"http://www.corpodebombeiros.sp.gov.br"];
+            }
         }
     }
     
