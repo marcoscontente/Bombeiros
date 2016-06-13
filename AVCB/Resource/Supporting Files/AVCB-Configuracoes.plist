@@ -8,11 +8,17 @@
 	<string>V1@F@c1lW38$3rv1c3</string>
 	<key>Url_Desenvolvimento</key>
 	<string>http://10.200.240.46/sgsci_mobile/ConsultaAvcb.svc/Licenca/PorQrCode/</string>
-	<key>Url_AVCB</key>
+	<key>Url_AVCB_antiga</key>
 	<string>http://www2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARAVCB.ASPX</string>
-	<key>Url_CLCB</key>
+	<key>Url_AVCB</key>
+	<string>http://viafacil2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARAVCB.ASPX</string>
+	<key>Url_CLCB_antiga</key>
 	<string>http://www2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARCLCB.ASPX</string>
-	<key>Url_Producao</key>
+	<key>Url_CLCB</key>
+	<string>http://viafacil2.policiamilitar.sp.gov.br/SGSCI/PUBLICO/PESQUISARCLCB.ASPX</string>
+	<key>Url_Producao_antiga</key>
 	<string>http://www2.policiamilitar.sp.gov.br/sgsci_mobile/ConsultaAvcb.svc/Licenca/PorQrCode/</string>
+	<key>Url_Producao</key>
+	<string>http://viafacil2.policiamilitar.sp.gov.br/SGSCI_MOBILE/ConsultaAvcb.svc/Licenca/PorQrCode/</string>
 </dict>
 </plist>

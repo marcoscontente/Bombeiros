@@ -254,7 +254,7 @@
     {
         UIAlertView *alerta = [[UIAlertView alloc]
                                initWithTitle:@"Erro de conexão"
-                               message:@"Ocorreu um erro ao processar a requisição, tente novamente."
+                               message:@"Nào obtivemos sucesso em sua consulta, tente novamente."
                                delegate:nil
                                cancelButtonTitle:@"Ok"
                                otherButtonTitles:nil];
@@ -341,13 +341,13 @@
 #pragma mark - IBActions
 - (IBAction)btnScannerQR:(id)sender
 {
-    /*
-                Chamada para testar no simulador 
+    
+//                Chamada para testar no simulador 
+    
      
-     
-     [self chamadaServico:@{@"chave":  @"29B4CAC75FEDB50C683E6803B4580716"}];
-     
-    */
+//     [self chamadaServico:@{@"chave":  @"29B4CAC75FEDB50C683E6803B4580716"}];
+    
+    
     [self presentViewController:_reader animated:YES completion:nil];
 }
 
