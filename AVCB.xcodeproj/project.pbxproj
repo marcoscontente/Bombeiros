@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B4E044D1E420F53008D855D /* MapsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4E044C1E420F53008D855D /* MapsHandler.swift */; };
+		2B4E044F1E4216FC008D855D /* QRCode.html in Resources */ = {isa = PBXBuildFile; fileRef = 2B4E044E1E4216FC008D855D /* QRCode.html */; };
+		2B4E04551E421D17008D855D /* qr_192_192.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B4E04541E421D17008D855D /* qr_192_192.png */; };
+		2B7521EF1E40C4EA00F012EE /* LogradourosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7521EE1E40C4EA00F012EE /* LogradourosViewController.swift */; };
+		2B7521F11E40CB0300F012EE /* LicencasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7521F01E40CB0300F012EE /* LicencasViewController.swift */; };
+		2B7521F31E40D78E00F012EE /* LicencaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7521F21E40D78E00F012EE /* LicencaCell.swift */; };
+		2B7521F51E40E3AE00F012EE /* LicencaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7521F41E40E3AE00F012EE /* LicencaDetailViewController.swift */; };
+		2B7521F71E40EE7B00F012EE /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7521F61E40EE7B00F012EE /* ProgressHUD.swift */; };
+		2B7521F91E40FA5B00F012EE /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7521F81E40FA5B00F012EE /* Alert.swift */; };
+		2B7521FB1E4103FB00F012EE /* Information.html in Resources */ = {isa = PBXBuildFile; fileRef = 2B7521FA1E4103FB00F012EE /* Information.html */; };
+		2B7521FD1E41210300F012EE /* GoogleStaticMapsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7521FC1E41210300F012EE /* GoogleStaticMapsHelper.swift */; };
+		2B88D93B1E3BCC98005DFA7D /* MunicipioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B88D93A1E3BCC98005DFA7D /* MunicipioViewController.swift */; };
+		2B88D93D1E3BCD20005DFA7D /* Municipio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B88D93C1E3BCD20005DFA7D /* Municipio.swift */; };
+		2B88D93F1E3BD21C005DFA7D /* ApiClientRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B88D93E1E3BD21C005DFA7D /* ApiClientRepository.swift */; };
+		2B88D9411E3BDE47005DFA7D /* ConsultaEnderecoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B88D9401E3BDE47005DFA7D /* ConsultaEnderecoViewController.swift */; };
+		2B94F4291E3FA1070084425C /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94F4281E3FA1070084425C /* Networking.swift */; };
+		2B94F42B1E3FAB6F0084425C /* Logradouro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94F42A1E3FAB6F0084425C /* Logradouro.swift */; };
+		2B94F42D1E3FC4FE0084425C /* Licenca.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94F42C1E3FC4FE0084425C /* Licenca.swift */; };
 		9625EE846E94C2FB39C990FE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB72BBBDD1D00ECFF5CAB33D /* libPods.a */; };
 		B52EB39D1B69120900E5C95F /* splash768x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = B52EB3941B69120900E5C95F /* splash768x1024.png */; };
 		B52EB39E1B69120900E5C95F /* splash1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = B52EB3951B69120900E5C95F /* splash1024x768.png */; };
@@ -79,6 +97,25 @@
 
 /* Begin PBXFileReference section */
 		1C415F0AF01E3607B72833BE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		2B4E044C1E420F53008D855D /* MapsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsHandler.swift; sourceTree = "<group>"; };
+		2B4E044E1E4216FC008D855D /* QRCode.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = QRCode.html; sourceTree = "<group>"; };
+		2B4E04541E421D17008D855D /* qr_192_192.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qr_192_192.png; sourceTree = "<group>"; };
+		2B7521EE1E40C4EA00F012EE /* LogradourosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogradourosViewController.swift; sourceTree = "<group>"; };
+		2B7521F01E40CB0300F012EE /* LicencasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicencasViewController.swift; sourceTree = "<group>"; };
+		2B7521F21E40D78E00F012EE /* LicencaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicencaCell.swift; sourceTree = "<group>"; };
+		2B7521F41E40E3AE00F012EE /* LicencaDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicencaDetailViewController.swift; sourceTree = "<group>"; };
+		2B7521F61E40EE7B00F012EE /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		2B7521F81E40FA5B00F012EE /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		2B7521FA1E4103FB00F012EE /* Information.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Information.html; sourceTree = "<group>"; };
+		2B7521FC1E41210300F012EE /* GoogleStaticMapsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleStaticMapsHelper.swift; sourceTree = "<group>"; };
+		2B88D9391E3BCC97005DFA7D /* AVCB-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AVCB-Bridging-Header.h"; sourceTree = "<group>"; };
+		2B88D93A1E3BCC98005DFA7D /* MunicipioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MunicipioViewController.swift; path = Source/Controllers/MunicipioViewController.swift; sourceTree = "<group>"; };
+		2B88D93C1E3BCD20005DFA7D /* Municipio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Municipio.swift; sourceTree = "<group>"; };
+		2B88D93E1E3BD21C005DFA7D /* ApiClientRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClientRepository.swift; sourceTree = "<group>"; };
+		2B88D9401E3BDE47005DFA7D /* ConsultaEnderecoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsultaEnderecoViewController.swift; sourceTree = "<group>"; };
+		2B94F4281E3FA1070084425C /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		2B94F42A1E3FAB6F0084425C /* Logradouro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logradouro.swift; sourceTree = "<group>"; };
+		2B94F42C1E3FC4FE0084425C /* Licenca.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Licenca.swift; sourceTree = "<group>"; };
 		B52EB3941B69120900E5C95F /* splash768x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash768x1024.png; path = Resource/Images/Splash/splash768x1024.png; sourceTree = "<group>"; };
 		B52EB3951B69120900E5C95F /* splash1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash1024x768.png; path = Resource/Images/Splash/splash1024x768.png; sourceTree = "<group>"; };
 		B52EB3961B69120900E5C95F /* splash1536x2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash1536x2048.png; path = Resource/Images/Splash/splash1536x2048.png; sourceTree = "<group>"; };
@@ -104,8 +141,8 @@
 		B5A0E6941B14BA730016A7E6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B5A0E6961B14BB6D0016A7E6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B5A0E6981B14F42F0016A7E6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		B5C3FA121A279DE60062F014 /* AutoRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AutoRes.h; path = Source/Models/AutoRes.h; sourceTree = "<group>"; };
-		B5C3FA131A279DE60062F014 /* AutoRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AutoRes.m; path = Source/Models/AutoRes.m; sourceTree = "<group>"; };
+		B5C3FA121A279DE60062F014 /* AutoRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoRes.h; sourceTree = "<group>"; };
+		B5C3FA131A279DE60062F014 /* AutoRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoRes.m; sourceTree = "<group>"; };
 		B5C3FA191A279F020062F014 /* Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mapping.h; path = Source/Dominio/Mapping.h; sourceTree = "<group>"; };
 		B5C3FA1C1A27A12C0062F014 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Util.h; path = Source/Utils/Util.h; sourceTree = "<group>"; };
 		B5C3FA1D1A27A12C0062F014 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Util.m; path = Source/Utils/Util.m; sourceTree = "<group>"; };
@@ -284,6 +321,9 @@
 				B55F635B1A2660F1003EA3D1 /* Supporting Files */,
 				B55F635A1A2660EC003EA3D1 /* Storyboard */,
 				B55F63591A2660E6003EA3D1 /* Images */,
+				2B7521FA1E4103FB00F012EE /* Information.html */,
+				2B4E044E1E4216FC008D855D /* QRCode.html */,
+				2B4E04541E421D17008D855D /* qr_192_192.png */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -325,6 +365,7 @@
 		B55F635B1A2660F1003EA3D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2B88D9391E3BCC97005DFA7D /* AVCB-Bridging-Header.h */,
 				B55F63671A266163003EA3D1 /* Info.plist */,
 				B55F63681A266163003EA3D1 /* main.m */,
 				B5C3FA1F1A27A3D40062F014 /* AVCB-Configuracoes.plist */,
@@ -344,6 +385,12 @@
 				FF9844A31B971A5700EB7EC4 /* Resultado.m */,
 				FFB7A9001BA85D13002E8236 /* Informacao.h */,
 				FFB7A9011BA85D13002E8236 /* Informacao.m */,
+				2B88D9401E3BDE47005DFA7D /* ConsultaEnderecoViewController.swift */,
+				2B88D93A1E3BCC98005DFA7D /* MunicipioViewController.swift */,
+				2B7521EE1E40C4EA00F012EE /* LogradourosViewController.swift */,
+				2B7521F01E40CB0300F012EE /* LicencasViewController.swift */,
+				2B7521F21E40D78E00F012EE /* LicencaCell.swift */,
+				2B7521F41E40E3AE00F012EE /* LicencaDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -353,9 +400,13 @@
 			children = (
 				B5C3FA121A279DE60062F014 /* AutoRes.h */,
 				B5C3FA131A279DE60062F014 /* AutoRes.m */,
+				2B88D93C1E3BCD20005DFA7D /* Municipio.swift */,
+				2B94F42A1E3FAB6F0084425C /* Logradouro.swift */,
+				2B94F42C1E3FC4FE0084425C /* Licenca.swift */,
 			);
 			name = Models;
-			sourceTree = "<group>";
+			path = /Users/gil/Desktop/git/AVCB/AVCB/Source/Models;
+			sourceTree = "<absolute>";
 		};
 		B55F635E1A266109003EA3D1 /* Utils */ = {
 			isa = PBXGroup;
@@ -364,6 +415,12 @@
 				B52FEBAB1B822E1C00973233 /* Reachability.m */,
 				B5C3FA1C1A27A12C0062F014 /* Util.h */,
 				B5C3FA1D1A27A12C0062F014 /* Util.m */,
+				2B88D93E1E3BD21C005DFA7D /* ApiClientRepository.swift */,
+				2B94F4281E3FA1070084425C /* Networking.swift */,
+				2B7521F61E40EE7B00F012EE /* ProgressHUD.swift */,
+				2B7521F81E40FA5B00F012EE /* Alert.swift */,
+				2B7521FC1E41210300F012EE /* GoogleStaticMapsHelper.swift */,
+				2B4E044C1E420F53008D855D /* MapsHandler.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -476,6 +533,7 @@
 					B55F632D1A2656D2003EA3D1 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = NG8DB6RW5R;
+						LastSwiftMigration = 0820;
 					};
 					B55F63461A2656D2003EA3D1 = {
 						CreatedOnToolsVersion = 6.1;
@@ -507,7 +565,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B4E04551E421D17008D855D /* qr_192_192.png in Resources */,
 				B52EB3A11B69120900E5C95F /* splash2208x1242.png in Resources */,
+				2B4E044F1E4216FC008D855D /* QRCode.html in Resources */,
 				FF6480341B95CA0F00A31E79 /* splash1536x2008.png in Resources */,
 				B52EB39D1B69120900E5C95F /* splash768x1024.png in Resources */,
 				B55F63661A266154003EA3D1 /* Main.storyboard in Resources */,
@@ -536,6 +596,7 @@
 				FF6480181B95C94200A31E79 /* Icon-58.png in Resources */,
 				B5C3FA201A27A3D40062F014 /* AVCB-Configuracoes.plist in Resources */,
 				FF6480201B95C94200A31E79 /* Icon-144.png in Resources */,
+				2B7521FB1E4103FB00F012EE /* Information.html in Resources */,
 				FF7E8BE21B96202400ECC45F /* banner_1536x178.png in Resources */,
 				FF6480351B95CA0F00A31E79 /* splash2048x1236.png in Resources */,
 				B55F63841A27586F003EA3D1 /* turorial22x22@3x.png in Resources */,
@@ -602,14 +663,29 @@
 			files = (
 				FF1B3C991B8F61400081E66A /* AVCBBanner.m in Sources */,
 				B53178C01A48985C00B370B1 /* Home.m in Sources */,
+				2B7521EF1E40C4EA00F012EE /* LogradourosViewController.swift in Sources */,
+				2B7521F91E40FA5B00F012EE /* Alert.swift in Sources */,
+				2B88D93F1E3BD21C005DFA7D /* ApiClientRepository.swift in Sources */,
 				FFDD80281B7D0C4100681462 /* WebViewController.m in Sources */,
+				2B4E044D1E420F53008D855D /* MapsHandler.swift in Sources */,
+				2B7521F71E40EE7B00F012EE /* ProgressHUD.swift in Sources */,
 				B52FEBAC1B822E1C00973233 /* Reachability.m in Sources */,
+				2B7521F11E40CB0300F012EE /* LicencasViewController.swift in Sources */,
 				B55F636A1A266163003EA3D1 /* main.m in Sources */,
+				2B94F4291E3FA1070084425C /* Networking.swift in Sources */,
+				2B94F42D1E3FC4FE0084425C /* Licenca.swift in Sources */,
+				2B88D93B1E3BCC98005DFA7D /* MunicipioViewController.swift in Sources */,
 				B55F63621A266138003EA3D1 /* AppDelegate.m in Sources */,
+				2B94F42B1E3FAB6F0084425C /* Logradouro.swift in Sources */,
+				2B7521F51E40E3AE00F012EE /* LicencaDetailViewController.swift in Sources */,
+				2B88D93D1E3BCD20005DFA7D /* Municipio.swift in Sources */,
 				B5C3FA141A279DE60062F014 /* AutoRes.m in Sources */,
 				B5C3FA1E1A27A12C0062F014 /* Util.m in Sources */,
 				FF9844A41B971A5700EB7EC4 /* Resultado.m in Sources */,
+				2B88D9411E3BDE47005DFA7D /* ConsultaEnderecoViewController.swift in Sources */,
+				2B7521FD1E41210300F012EE /* GoogleStaticMapsHelper.swift in Sources */,
 				FFB7A9021BA85D13002E8236 /* Informacao.m in Sources */,
+				2B7521F31E40D78E00F012EE /* LicencaCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,11 +792,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = NG8DB6RW5R;
 				INFOPLIST_FILE = "$(SRCROOT)/AVCB/Resource/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Prodesp.AVCB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AVCB/AVCB-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -730,17 +812,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = NG8DB6RW5R;
 				INFOPLIST_FILE = "$(SRCROOT)/AVCB/Resource/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Prodesp.AVCB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AVCB/AVCB-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		B55F63551A2656D3003EA3D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -760,6 +849,7 @@
 		B55F63561A2656D3003EA3D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

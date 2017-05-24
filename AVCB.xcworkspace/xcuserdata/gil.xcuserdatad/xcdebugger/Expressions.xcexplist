@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ApiClientRepository.clientURLRequest(String, params : [String : AnyObject]?) -&gt; NSMutableURLRequest:ApiClientRepository.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "request.url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

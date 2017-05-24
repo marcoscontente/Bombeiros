@@ -10,14 +10,18 @@
 #import "AppDelegate.h"
 #import "Util.h"
 #import "Reachability.h"
+#import "Informacao.h"
+#import "AVCB-Swift.h"
+
+@import CoreLocation;
 
 @interface Home ()
 
+@property (nonatomic, strong) ZBarReaderViewController *reader;
 @end
 
 @implementation Home
 {
-    __strong ZBarReaderViewController *_reader;
     BOOL firstTimeUpdateLocation;
     BOOL internet;
     double jsonLatitude;
@@ -29,24 +33,25 @@
     CLGeocoder *fgeo;
     NSMutableData *urlData;
     NSString *responseData;
-    AppDelegate *delegate;
     Reachability* internetReachable;
+    IBOutlet UIButton *qrButton;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     firstTimeUpdateLocation = YES;
-    _reader = [ZBarReaderViewController new];
-    _reader.readerDelegate = self;
-    _reader.supportedOrientationsMask = ZBarOrientationMaskAll;
-    [_reader setTracksSymbols:YES];
+    self.reader = [[ZBarReaderViewController alloc] init];
+    self.reader.readerDelegate = self;
+    self.reader.supportedOrientationsMask = ZBarOrientationMaskAll;
+    self.reader.view.tintColor = [UIColor whiteColor];
+    [self.reader setTracksSymbols:YES];
 
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
-    
-    
-    
+  
+    [qrButton setBackgroundImage:[qrButton.currentBackgroundImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+  
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
     {
         // Use one or the other, not both. Depending on what you put in info.plist
@@ -59,23 +64,19 @@
     [locationManager startUpdatingLocation];
 }
 
-
-- (void)viewWillDisappear:(BOOL)animated {
-    
-    self.navigationItem.title = @"Voltar";
-    
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    self.navigationItem.title = @"Consulta Licenças";
-
-}
-
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     if ([[segue identifier] isEqualToString:@"segueWebView"]) {
         WebViewController *webViewController = [segue destinationViewController];
         webViewController.url = (NSString *)sender;
+    } else if ([segue.identifier isEqualToString:@"segueInformacao"]) {
+      Informacao *informacao = (Informacao *)segue.destinationViewController;
+      if ([sender isKindOfClass:[NSString class]]) {
+        informacao.fileName = (NSString *)sender;
+      }
+    } else if ([segue.identifier isEqualToString:@"SegueLicencaDetail"]) {
+      LicencaDetailViewController *licencaDetailViewController = (LicencaDetailViewController *)segue.destinationViewController;
+      licencaDetailViewController.licenca = (Licenca *)sender;
     }
 }
 
@@ -99,8 +100,6 @@
 
 -(void)chamadaServico:(NSDictionary *)chave
 {
-    delegate = [[UIApplication sharedApplication] delegate];
-    // exibe o activity indicator
     [NSThread detachNewThreadSelector:@selector(showActivityViewer) toTarget:[[UIApplication sharedApplication] delegate] withObject:nil];
     
     // acessando os nossos resources
@@ -172,7 +171,7 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
-    [delegate hideActivityViewer];
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] hideActivityViewer];
     
     if (error.code == -1009)
     {
@@ -219,15 +218,54 @@
         if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse)
         {
             jsonLocation = [[CLLocation alloc] initWithLatitude:jsonLatitude longitude:jsonLongitude];
-            atualLocation = [[CLLocation alloc] initWithLatitude:locationManager.location.coordinate.latitude longitude:locationManager.location.coordinate.longitude];
-            
-            double distance = [atualLocation distanceFromLocation:jsonLocation];
-            
+            atualLocation = locationManager.location;
+          
             NSDictionary *codigoJson = [self formatterToDictionary: responseData];
-            [[Util shared] setDistance:distance];
-            [[Util shared] setRespostaChamada:codigoJson];
-            [[Util shared] setLocalizacaoHabilitado:YES];
-            [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
+          
+          NSString *logradouro = codigoJson[@"DadosLogradouro"];
+          if (logradouro && logradouro.length > 0) {
+            [[CLGeocoder new] geocodeAddressString:codigoJson[@"DadosLogradouro"] completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+              CLPlacemark *placemark = placemarks.firstObject;
+              jsonLatitude = placemark.location.coordinate.latitude;
+              jsonLongitude = placemark.location.coordinate.longitude;
+              jsonLocation = placemark.location;
+              double distance;
+              if (jsonLatitude == 0 && jsonLongitude == 0) {
+                distance = -1;
+              } else {
+                distance = [atualLocation distanceFromLocation:jsonLocation];
+              }
+              [[Util shared] setDistance:distance];
+              [[Util shared] setRespostaChamada:codigoJson];
+              [[Util shared] setLocalizacaoHabilitado:YES];
+              Licenca *licenca = [[Licenca alloc] init:codigoJson];
+              
+              
+              dispatch_async(dispatch_get_main_queue(), ^{
+                [(AppDelegate *)[[UIApplication sharedApplication] delegate] hideActivityViewer];
+              });
+              
+              [self performSegueWithIdentifier:@"SegueLicencaDetail" sender:licenca];
+            }];
+            
+            return;
+          } else {
+              double distance;
+              if (jsonLatitude == 0 && jsonLongitude == 0) {
+                distance = -1;
+              } else {
+                distance = [atualLocation distanceFromLocation:jsonLocation];
+              }
+              [[Util shared] setDistance:distance];
+              [[Util shared] setRespostaChamada:codigoJson];
+              [[Util shared] setLocalizacaoHabilitado:YES];
+              Licenca *licenca = [[Licenca alloc] init:codigoJson];
+              
+              [self performSegueWithIdentifier:@"SegueLicencaDetail" sender:licenca];
+            
+          }
+
+          
         }
         else
         {
@@ -260,99 +298,73 @@
                                otherButtonTitles:nil];
         [alerta show];
     }
-    [delegate hideActivityViewer];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [(AppDelegate *)[[UIApplication sharedApplication] delegate] hideActivityViewer];
+    });
 }
 
 #pragma mark - ZBarDelegate
--(void)readerView:(ZBarReaderView *)readerView didStopWithError:(NSError *)error
-{
-    
-}
-
--(void)readerControllerDidFailToRead:(ZBarReaderController *)reader withRetry:(BOOL)retry
-{
-    
-}
-
--(void)readerViewDidStart:(ZBarReaderView *)readerView
-{
-}
-
--(void)readerView:(ZBarReaderView *)readerView didReadSymbols:(ZBarSymbolSet *)symbols fromImage:(UIImage *)image
-{
-}
-
 -(void) imagePickerController: (UIImagePickerController*) reader didFinishPickingMediaWithInfo: (NSDictionary*) info
 {
     ZBarSymbol *symbol = nil;
     id<NSFastEnumeration> results = [info objectForKey:ZBarReaderControllerResults];
-    
+  
     for(symbol in results)
-        break;
-    
-
+      break;
+  
     NSString* txtCodigo = symbol.data;
-    NSDictionary *codigoJson;
-    
-    BOOL modeloAVCB = [txtCodigo rangeOfString:@"AVCB:"].location != NSNotFound;
-    BOOL modeloCLCB = [txtCodigo rangeOfString:@"CLCB:"].location != NSNotFound;
-    BOOL modeloSLCB = [txtCodigo rangeOfString:@"SLCB:"].location != NSNotFound;
-    
-    // acessando os nossos resources
-    NSString *pathAppSettings = [[NSBundle mainBundle] pathForResource:@"AVCB-Configuracoes" ofType:@"plist"];
-    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:pathAppSettings];
-    
-    if (modeloAVCB)
-    {
-        // chamamos a url do bombeiro   @string/Url_AVCB
-        
-        [self performSegueWithIdentifier:@"segueWebView" sender:[dict objectForKey:@"Url_AVCB"]] ;
+    NSDictionary *codigoJson = [self formatterToDictionary: txtCodigo];
+  
+  
+  
+  BOOL modeloAVCB = [txtCodigo rangeOfString:@"AVCB:"].location != NSNotFound;
+  BOOL modeloCLCB = [txtCodigo rangeOfString:@"CLCB:"].location != NSNotFound;
+  BOOL modeloSLCB = [txtCodigo rangeOfString:@"SLCB:"].location != NSNotFound;
+  
+  // acessando os nossos resources
+  NSString *pathAppSettings = [[NSBundle mainBundle] pathForResource:@"AVCB-Configuracoes" ofType:@"plist"];
+  NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:pathAppSettings];
+  
+  if (modeloAVCB) {
+    [self performSegueWithIdentifier:@"segueWebView" sender:[dict objectForKey:@"Url_AVCB"]] ;
+  } else if (modeloCLCB || modeloSLCB) {
+    [self performSegueWithIdentifier:@"segueWebView" sender:[dict objectForKey:@"Url_CLCB"]];
+  } else {
+    codigoJson = [self formatterToDictionary: txtCodigo];
+    if (codigoJson == NULL) {
+      [self performSegueWithIdentifier:@"segueWebView" sender:@"http://www.corpodebombeiros.sp.gov.br"];
+    } else {
+      NSDictionary *qrCode = [codigoJson objectForKey:@"qrcode"];
+      if (qrCode && [qrCode objectForKey:@"Certidao"] != nil) {
+        [self chamadaServico:codigoJson];
+      } else if (qrCode && [qrCode objectForKey:@"ID"] != nil) {
+        [self chamadaServico:@{@"chave": [qrCode objectForKey:@"ID"]}];
+      } else {
+        [self performSegueWithIdentifier:@"segueWebView" sender:@"http://www.corpodebombeiros.sp.gov.br"];
+      }
     }
-    else if (modeloCLCB || modeloSLCB) {
-        [self performSegueWithIdentifier:@"segueWebView" sender:[dict objectForKey:@"Url_CLCB"]];
-    }
-    else {
-        codigoJson = [self formatterToDictionary: txtCodigo];
-        if (codigoJson == NULL) {
-    
-            [self performSegueWithIdentifier:@"segueWebView" sender:@"http://www.corpodebombeiros.sp.gov.br"];
-            
-        }
-        else
-        {
-            NSDictionary *qrcode = [codigoJson objectForKey:@"qrcode"];
-            if (qrcode != nil) {
-                NSString *chave = [qrcode objectForKey:@"ID"];
-                jsonLatitude = [[qrcode objectForKey:@"Latitude"] doubleValue];
-                jsonLongitude = [[qrcode objectForKey:@"Longitude"] doubleValue];
-                [self chamadaServico:@{@"chave":chave}];
-            }
-            else {
-                [self performSegueWithIdentifier:@"segueWebView" sender:@"http://www.corpodebombeiros.sp.gov.br"];
-            }
-        }
-    }
-    
-    [_reader dismissViewControllerAnimated:YES completion:nil];
+  }
+  
+  [self.reader dismissViewControllerAnimated:YES completion:nil];
 }
-
-
 
 #pragma mark - IBActions
 - (IBAction)btnScannerQR:(id)sender
 {
-    
-//                Chamada para testar no simulador 
-    
-     
-//     [self chamadaServico:@{@"chave":  @"29B4CAC75FEDB50C683E6803B4580716"}];
-    
-    
-    [self presentViewController:_reader animated:YES completion:nil];
+    [self presentViewController:self.reader animated:YES completion:nil];
 }
 
 - (IBAction)verInformacoes:(id)sender {
-    [self performSegueWithIdentifier:@"segueInformacao" sender:nil];
+    [self performSegueWithIdentifier:@"segueInformacao" sender:@"Information"];
+}
+
+- (IBAction)qrCodeInfoTapped:(id)sender {
+  [self performSegueWithIdentifier:@"segueInformacao" sender:@"QRCode"];
+}
+
+- (IBAction)call193:(id)sender {
+  NSURL *call193Url = [NSURL URLWithString:@"tel://193"];
+  [[UIApplication sharedApplication] openURL:call193Url];
 }
 
 #pragma mark - Alert Dekegate

@@ -7,8 +7,11 @@
 //
 
 #import "Informacao.h"
+@import SafariServices;
 
-@interface Informacao ()
+@interface Informacao () <UIWebViewDelegate>
+
+@property (nonatomic, weak) IBOutlet UIWebView *webView;
 
 @end
 
@@ -16,39 +19,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSString *html = @"<html><head></head><body style=\"text-align:justify;color:black;padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:10px;\">Este aplicativo permite ao cidadão consultar as Licenças emitidas pelo Corpo de Bombeiros (AVCB, CLCB e TAACB). A Licença atesta que a edificação atendeu às exigências de segurança contra incêndio do Estado de São Paulo e, portanto, encontra-se regularizada perante o Corpo de Bombeiros. Verifique se a edificação que você frequenta possui segurança contra incêndio e se ela está sendo utilizada dentro das condições aprovadas. O documento de Licença do Corpo de Bombeiros deve estar afixado na entrada da edificação. Para consultar, basta apontar o leitor para o QRCode existente no documento. A consulta pelo número do documento ou pelo endereço da edificação pode ser efetuada no portal do Via Fácil Bombeiros na internet:<a href=\"http://www.corpodebombeiros.sp.gov.br\">www.corpodebombeiros.sp.gov.br</a></body></html>";
-    webView.delegate = self;
-    [webView loadHTMLString:html baseURL:nil];
-    
-    self.navigationItem.title = @"Consulta Licenças";
-    
+  
+    NSString *path = [[NSBundle mainBundle] pathForResource:self.fileName ofType:@"html"];
+    NSString *html = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    [self.webView loadHTMLString:html baseURL:[[NSBundle mainBundle] bundleURL]];
+  
+    if ([self.fileName isEqualToString:@"Information"]) {
+        self.navigationItem.title = @"Consulta Licenças";
+    } else {
+        self.navigationItem.title = @"O que é QRCode";
+    }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-- (BOOL)webView:(UIWebView *)webView
-shouldStartLoadWithRequest:(NSURLRequest *)request
- navigationType:(UIWebViewNavigationType)navigationType {
-    
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     if ( navigationType == UIWebViewNavigationTypeLinkClicked ) {
-        [[UIApplication sharedApplication] openURL:[request URL]];
+        if ([SFSafariViewController class] != nil) {
+            SFSafariViewController *safariViewController = [[SFSafariViewController alloc] initWithURL:request.URL];
+            [self presentViewController:safariViewController animated:true completion:nil];
+        } else {
+            [[UIApplication sharedApplication] openURL:request.URL];
+        }
+      
         return NO;
     }
     return  true;
 }
-
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
 
 @end

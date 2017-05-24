@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Informacao : UIViewController <UIWebViewDelegate>
-{
-    IBOutlet UIWebView *webView;
-}
+@interface Informacao : UIViewController
+
+@property (nonatomic, strong) NSString *fileName;
 
 @end

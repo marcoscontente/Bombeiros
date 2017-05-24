@@ -72,13 +72,14 @@
                                       UIViewAutoresizingFlexibleTopMargin   |
                                       UIViewAutoresizingFlexibleBottomMargin );
     activityWheel.color = [UIColor whiteColor];
-    
+  
+  dispatch_async(dispatch_get_main_queue(), ^{
     [self.activityView addSubview:activityWheel];
-    //[self.activityView addSubview:label];
     
     [window addSubview: self.activityView];
     
     [[[self.activityView subviews] objectAtIndex:0] startAnimating];
+  });
 }
 
 -(void) hideActivityViewer
