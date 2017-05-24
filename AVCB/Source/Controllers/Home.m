@@ -69,14 +69,14 @@
     if ([[segue identifier] isEqualToString:@"segueWebView"]) {
         WebViewController *webViewController = [segue destinationViewController];
         webViewController.url = (NSString *)sender;
-    } else if ([segue.identifier isEqualToString:@"segueInformacao"]) {
+    } else if ([segue.identifier isEqualToString:@"segueInformation"]) {
       Informacao *informacao = (Informacao *)segue.destinationViewController;
       if ([sender isKindOfClass:[NSString class]]) {
         informacao.fileName = (NSString *)sender;
       }
-    } else if ([segue.identifier isEqualToString:@"SegueLicencaDetail"]) {
-      LicencaDetailViewController *licencaDetailViewController = (LicencaDetailViewController *)segue.destinationViewController;
-      licencaDetailViewController.licenca = (Licenca *)sender;
+    } else if ([segue.identifier isEqualToString:@"SegueLicenseDetail"]) {
+      LicenseDetailViewController *licenseDetailViewController = (LicenseDetailViewController *)segue.destinationViewController;
+      licenseDetailViewController.license = (Licenca *)sender;
     }
 }
 
@@ -245,7 +245,7 @@
                 [(AppDelegate *)[[UIApplication sharedApplication] delegate] hideActivityViewer];
               });
               
-              [self performSegueWithIdentifier:@"SegueLicencaDetail" sender:licenca];
+              [self performSegueWithIdentifier:@"SegueLicenseDetail" sender:licenca];
             }];
             
             return;
@@ -261,7 +261,7 @@
               [[Util shared] setLocalizacaoHabilitado:YES];
               Licenca *licenca = [[Licenca alloc] init:codigoJson];
               
-              [self performSegueWithIdentifier:@"SegueLicencaDetail" sender:licenca];
+              [self performSegueWithIdentifier:@"SegueLicenseDetail" sender:licenca];
             
           }
 
@@ -355,11 +355,11 @@
 }
 
 - (IBAction)verInformacoes:(id)sender {
-    [self performSegueWithIdentifier:@"segueInformacao" sender:@"Information"];
+    [self performSegueWithIdentifier:@"segueInformation" sender:@"Information"];
 }
 
 - (IBAction)qrCodeInfoTapped:(id)sender {
-  [self performSegueWithIdentifier:@"segueInformacao" sender:@"QRCode"];
+  [self performSegueWithIdentifier:@"segueInformation" sender:@"QRCode"];
 }
 
 - (IBAction)call193:(id)sender {
@@ -381,7 +381,7 @@
         NSDictionary *codigoJson = [self formatterToDictionary: responseData];
         [[Util shared] setRespostaChamada:codigoJson];
         [[Util shared] setLocalizacaoHabilitado:NO];
-        [self performSegueWithIdentifier:@"seguePesquisa" sender:nil];
+        [self performSegueWithIdentifier:@"segueSearch" sender:nil];
     }
 
 }

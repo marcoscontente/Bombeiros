@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GgH-yd-AOZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GgH-yd-AOZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -227,15 +227,15 @@ o que é um QRCode</string>
                         <barButtonItem key="rightBarButtonItem" image="48_48" id="5Gg-QJ-D3d">
                             <connections>
                                 <action selector="verInformacoes:" destination="z8u-3l-NAB" id="ym6-jI-s9R"/>
-                                <segue destination="bYs-9H-rYj" kind="show" identifier="segueInformacao" id="pL7-9K-i2v"/>
+                                <segue destination="bYs-9H-rYj" kind="show" identifier="segueInformation" id="pL7-9K-i2v"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="qrButton" destination="Nf9-0Q-MEU" id="zUE-7x-pvs"/>
-                        <segue destination="gNb-rl-Gu3" kind="show" identifier="seguePesquisa" id="iUw-KY-LA4"/>
+                        <segue destination="gNb-rl-Gu3" kind="show" identifier="segueSearch" id="iUw-KY-LA4"/>
                         <segue destination="OW4-lm-x4U" kind="show" identifier="segueWebView" id="yF4-sf-7yT"/>
-                        <segue destination="WGX-Ag-cwN" kind="show" identifier="SegueLicencaDetail" id="sCR-qA-cJT"/>
+                        <segue destination="WGX-Ag-cwN" kind="show" identifier="SegueLicenseDetail" id="sCR-qA-cJT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fD1-wl-Tih" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -245,7 +245,7 @@ o que é um QRCode</string>
         <!--Lista de Municípios-->
         <scene sceneID="Z2X-Fa-Tmi">
             <objects>
-                <viewController id="XQ9-HA-8GH" customClass="MunicipioViewController" customModule="AVCB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XQ9-HA-8GH" customClass="CityViewController" customModule="AVCB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pHm-xv-Mig"/>
                         <viewControllerLayoutGuide type="bottom" id="CGc-5B-zJ6"/>
@@ -262,7 +262,7 @@ o que é um QRCode</string>
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vnd-XW-oVs" id="tc3-dX-Koo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -285,9 +285,9 @@ o que é um QRCode</string>
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="rp6-Lo-qaI"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchBar" destination="TDs-Lw-VW6" id="3aV-0s-yO1"/>
+                        <outlet property="searchBar" destination="TDs-Lw-VW6" id="1OJ-St-o0s"/>
                         <outlet property="tableView" destination="q5S-6m-gle" id="BKY-Th-mGc"/>
-                        <segue destination="Vbq-Z2-WmT" kind="unwind" identifier="segueMunicipio" unwindAction="unwindFromMunicipioWithSegue:" id="pq9-0Q-HPS"/>
+                        <segue destination="Vbq-Z2-WmT" kind="unwind" identifier="segueCity" unwindAction="unwindFromCityWithSegue:" id="pq9-0Q-HPS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhJ-00-sgn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -297,7 +297,7 @@ o que é um QRCode</string>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <outlet property="delegate" destination="XQ9-HA-8GH" id="XNX-uF-6X0"/>
+                        <outlet property="delegate" destination="XQ9-HA-8GH" id="ORj-cO-weq"/>
                     </connections>
                 </searchBar>
             </objects>
@@ -306,7 +306,7 @@ o que é um QRCode</string>
         <!--Selecione um logradouro-->
         <scene sceneID="J2H-na-06H">
             <objects>
-                <viewController title="Selecione um logradouro" id="fcF-ys-A1G" customClass="LogradourosViewController" customModule="AVCB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Selecione um logradouro" id="fcF-ys-A1G" customClass="AddressViewController" customModule="AVCB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9M1-Lh-Xrj"/>
                         <viewControllerLayoutGuide type="bottom" id="afT-FZ-J9X"/>
@@ -323,14 +323,14 @@ o que é um QRCode</string>
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="96g-Dy-X1Z" id="egy-x1-CYN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="fcF-ys-A1G" id="aNN-Fm-vtr"/>
-                                    <outlet property="delegate" destination="fcF-ys-A1G" id="bOm-pu-VeW"/>
+                                    <outlet property="dataSource" destination="fcF-ys-A1G" id="RR8-cN-eSu"/>
+                                    <outlet property="delegate" destination="fcF-ys-A1G" id="9X0-gz-eZU"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -346,8 +346,8 @@ o que é um QRCode</string>
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="b38-PP-xDb"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="ohL-qF-Kna" id="uKO-Xn-c43"/>
-                        <segue destination="3FW-3Q-Xg3" kind="show" identifier="SegueLicencas" id="eFT-27-3SO"/>
+                        <outlet property="tableView" destination="ohL-qF-Kna" id="cd6-r1-YeW"/>
+                        <segue destination="3FW-3Q-Xg3" kind="show" identifier="SegueLicenses" id="eFT-27-3SO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8J9-zD-N0f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -357,7 +357,7 @@ o que é um QRCode</string>
         <!--Lista de Licenças-->
         <scene sceneID="HeZ-zJ-JYV">
             <objects>
-                <viewController title="Lista de Licenças" id="3FW-3Q-Xg3" customClass="LicencasViewController" customModule="AVCB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Lista de Licenças" id="3FW-3Q-Xg3" customClass="LicensesViewController" customModule="AVCB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cig-29-qFa"/>
                         <viewControllerLayoutGuide type="bottom" id="XGp-q3-GmT"/>
@@ -434,11 +434,11 @@ o que é um QRCode</string>
                                 <rect key="frame" x="0.0" y="239" width="375" height="428"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="91" id="4hw-oQ-Eqi" customClass="LicencaCell" customModule="AVCB" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="91" id="4hw-oQ-Eqi" customClass="LicenseCell" customModule="AVCB" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4hw-oQ-Eqi" id="YCE-4i-q6c">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFb-ZP-Win">
@@ -475,10 +475,10 @@ o que é um QRCode</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="infoLabel" destination="XFb-ZP-Win" id="tE6-hh-4HN"/>
-                                            <outlet property="logradouroLabel" destination="laj-Fm-cbb" id="KPy-Qh-njN"/>
-                                            <outlet property="typeImageView" destination="95G-WQ-KQF" id="FKI-yS-rS9"/>
-                                            <segue destination="WGX-Ag-cwN" kind="show" identifier="SegueLicencaDetail" id="mb0-xb-csf"/>
+                                            <outlet property="addressLabel" destination="laj-Fm-cbb" id="AjI-d2-5lK"/>
+                                            <outlet property="infoLabel" destination="XFb-ZP-Win" id="cDy-eC-1sd"/>
+                                            <outlet property="typeImageView" destination="95G-WQ-KQF" id="4mi-OV-V7p"/>
+                                            <segue destination="WGX-Ag-cwN" kind="show" identifier="SegueLicenseDetail" id="mb0-xb-csf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -512,9 +512,9 @@ o que é um QRCode</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bairroLabel" destination="bDT-tn-pFq" id="2M9-u5-Mav"/>
-                        <outlet property="logradouroLabel" destination="lBw-Qp-T6u" id="BYA-9W-nOx"/>
-                        <outlet property="municipioLabel" destination="GXS-nV-CeN" id="ygK-nl-q9j"/>
+                        <outlet property="addressLabel" destination="lBw-Qp-T6u" id="ahf-JK-ebz"/>
+                        <outlet property="cityLabel" destination="GXS-nV-CeN" id="1DL-iF-ndU"/>
+                        <outlet property="neighborhoodLabel" destination="bDT-tn-pFq" id="tWz-iz-Hkh"/>
                         <outlet property="tableView" destination="Y05-dq-cIi" id="2c5-1d-hBO"/>
                     </connections>
                 </viewController>
@@ -525,7 +525,7 @@ o que é um QRCode</string>
         <!--Detalhe da Licença-->
         <scene sceneID="Pzn-es-x30">
             <objects>
-                <viewController id="WGX-Ag-cwN" customClass="LicencaDetailViewController" customModule="AVCB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WGX-Ag-cwN" customClass="LicenseDetailViewController" customModule="AVCB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KNZ-lT-6Ze"/>
                         <viewControllerLayoutGuide type="bottom" id="Nnh-YU-ZhL"/>
@@ -714,15 +714,15 @@ o que é um QRCode</string>
                     </view>
                     <navigationItem key="navigationItem" title="Detalhe da Licença" id="YFX-zM-Otq"/>
                     <connections>
+                        <outlet property="addressLabel" destination="tVi-1B-5EY" id="OZU-SK-PRp"/>
                         <outlet property="avcbLabel" destination="RxE-dz-KL6" id="Wxe-QP-24K"/>
-                        <outlet property="enderecoLabel" destination="tVi-1B-5EY" id="cPJ-RA-R0J"/>
-                        <outlet property="localizacaoLabel" destination="6bB-og-G6j" id="cKv-i9-it0"/>
-                        <outlet property="mapButton" destination="yKu-B0-yxD" id="c10-wW-bfz"/>
-                        <outlet property="observacoesLabel" destination="KKC-MX-XEY" id="lsg-7T-fim"/>
-                        <outlet property="ocupacaoLabel" destination="FuC-c4-yon" id="YlV-MT-o4I"/>
-                        <outlet property="razaoSocialLabel" destination="DMB-UH-Xz4" id="fhY-Da-QN0"/>
-                        <outlet property="situacaoLabel" destination="ivf-O2-mYK" id="jkm-z0-d94"/>
-                        <outlet property="vigenciaLabel" destination="fH3-IL-Zv9" id="hET-K9-KjC"/>
+                        <outlet property="corporateNameLabel" destination="DMB-UH-Xz4" id="Fng-fd-khL"/>
+                        <outlet property="locationLabel" destination="6bB-og-G6j" id="2tf-U2-ChR"/>
+                        <outlet property="mapButton" destination="yKu-B0-yxD" id="Rlk-mP-5zX"/>
+                        <outlet property="observationsLabel" destination="KKC-MX-XEY" id="BE2-xR-HSp"/>
+                        <outlet property="ocupationLabel" destination="FuC-c4-yon" id="Wsm-cD-Ste"/>
+                        <outlet property="situationLabel" destination="ivf-O2-mYK" id="WKC-Je-76P"/>
+                        <outlet property="validityLabel" destination="fH3-IL-Zv9" id="VQm-Do-c7p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1qZ-bh-4RF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -807,10 +807,10 @@ o que é um QRCode</string>
                                 </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="CeD-Pp-EH7" detailTextLabel="BP7-Z3-s8r" style="IBUITableViewCellStyleValue2" id="EIu-Tc-pAe">
-                                        <rect key="frame" x="0.0" y="112" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="111.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EIu-Tc-pAe" id="Gkf-rG-CAr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CeD-Pp-EH7">
@@ -820,7 +820,7 @@ o que é um QRCode</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BP7-Z3-s8r">
-                                                    <rect key="frame" x="112" y="15" width="33" height="15"/>
+                                                    <rect key="frame" x="112" y="15" width="33" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -830,14 +830,14 @@ o que é um QRCode</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RaioCell" textLabel="ohV-z4-rL4" style="IBUITableViewCellStyleDefault" id="PJs-wK-U4m">
-                                        <rect key="frame" x="0.0" y="156" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PJs-wK-U4m" id="Pda-sf-eJ8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ohV-z4-rL4">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -915,7 +915,7 @@ o que é um QRCode</string>
         <!--Consulta de AVC / CLCB-->
         <scene sceneID="cH2-Ug-bRB">
             <objects>
-                <tableViewController title="Consulta de AVC / CLCB" id="EqD-BN-3dH" customClass="ConsultaEnderecoViewController" customModule="AVCB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Consulta de AVC / CLCB" id="EqD-BN-3dH" customClass="LookUpAddressViewController" customModule="AVCB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="2Iz-zu-kYl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1031,8 +1031,8 @@ o que é um QRCode</string>
                             </tableViewSection>
                         </sections>
                         <connections>
-                            <outlet property="dataSource" destination="EqD-BN-3dH" id="ToA-sM-ZEP"/>
-                            <outlet property="delegate" destination="EqD-BN-3dH" id="zIu-Ra-29v"/>
+                            <outlet property="dataSource" destination="EqD-BN-3dH" id="zVG-ef-nHW"/>
+                            <outlet property="delegate" destination="EqD-BN-3dH" id="5lM-XD-9bJ"/>
                             <outletCollection property="gestureRecognizers" destination="Az0-Qx-b1s" appends="YES" id="x81-rE-1s5"/>
                         </connections>
                     </tableView>
@@ -1040,19 +1040,19 @@ o que é um QRCode</string>
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="7HT-ED-7GA"/>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="search" id="xtl-qv-8ln">
                             <connections>
-                                <action selector="searchTapped" destination="EqD-BN-3dH" id="YJu-sZ-tm4"/>
+                                <action selector="searchTapped" destination="EqD-BN-3dH" id="wG7-jH-L40"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="enderecoTextField" destination="XTq-UD-bqI" id="KMU-Gh-BlE"/>
-                        <outlet property="municipioTextField" destination="SGx-dt-xIz" id="FoA-p6-W1y"/>
-                        <outlet property="numeroTextField" destination="1q7-YW-nq4" id="8lH-MM-zrr"/>
+                        <outlet property="cityTextField" destination="SGx-dt-xIz" id="zeO-JI-aFh"/>
+                        <outlet property="numberTextField" destination="1q7-YW-nq4" id="MJf-eB-fqT"/>
                         <outlet property="searchBarButtonItem" destination="xtl-qv-8ln" id="ImR-lt-V6I"/>
-                        <segue destination="XQ9-HA-8GH" kind="show" identifier="SegueSearchMunicipio" id="y23-bP-DAe"/>
-                        <segue destination="fcF-ys-A1G" kind="show" identifier="SegueLogradouros" id="Z0g-nQ-5NO"/>
-                        <segue destination="3FW-3Q-Xg3" kind="show" identifier="SegueLicencas" id="Rzp-6c-8Ww"/>
-                        <segue destination="WGX-Ag-cwN" kind="show" identifier="SegueLicencaDetail" id="ahN-ms-GhP"/>
+                        <outlet property="streetTextField" destination="XTq-UD-bqI" id="8GB-31-mHn"/>
+                        <segue destination="XQ9-HA-8GH" kind="show" identifier="SegueSearchCity" id="y23-bP-DAe"/>
+                        <segue destination="fcF-ys-A1G" kind="show" identifier="SegueAddress" id="Z0g-nQ-5NO"/>
+                        <segue destination="3FW-3Q-Xg3" kind="show" identifier="SegueLicense" id="Rzp-6c-8Ww"/>
+                        <segue destination="WGX-Ag-cwN" kind="show" identifier="SegueLicenseDetail" id="ahN-ms-GhP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eh8-1U-gVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1074,6 +1074,6 @@ o que é um QRCode</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ahN-ms-GhP"/>
-        <segue reference="Rzp-6c-8Ww"/>
+        <segue reference="eFT-27-3SO"/>
     </inferredMetricsTieBreakers>
 </document>

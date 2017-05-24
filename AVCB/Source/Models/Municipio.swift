@@ -42,8 +42,8 @@ extension Municipio {
       completion { throw Networking.defaultError }
       return
     }
-    let logradouro = Logradouro(codigoMunicipio: codigoMunicipio, descricaoLogradouro: query)
-    Networking.get(logradouro) { inner in
+    let address = Logradouro(codigoMunicipio: codigoMunicipio, descricaoLogradouro: query)
+    Networking.get(address) { inner in
       do {
         let numero: String
         if let number = number, number.characters.count > 0 {
@@ -51,9 +51,9 @@ extension Municipio {
         } else {
           numero = Municipio.defaultLogradouroNumber
         }
-        if let logradouros = try inner() as? [Logradouro], logradouros.count > 0 {
-          if logradouros.count == 1 {
-            let licenca = Licenca(codigoMunicipio: self.codigoMunicipio, codigoLogradouro: logradouros.first!.codigoLogradouro, numeroDoLogradouro: numero)
+        if let addresses = try inner() as? [Logradouro], addresses.count > 0 {
+          if addresses.count == 1 {
+            let licenca = Licenca(codigoMunicipio: self.codigoMunicipio, codigoLogradouro: addresses.first!.codigoLogradouro, numeroDoLogradouro: numero)
             Networking.get(licenca) { inner in
               do {
                 guard let licencas = try inner() as? [Licenca] else {
@@ -66,7 +66,7 @@ extension Municipio {
               }
             }
           } else {
-            completion { return (logradouros: logradouros, licencas: nil) }
+            completion { return (logradouros: addresses, licencas: nil) }
           }
         } else {
           let licenca = Licenca(codigoMunicipio: self.codigoMunicipio, descricaoLogradouro: query, numeroDoLogradouro: numero)
